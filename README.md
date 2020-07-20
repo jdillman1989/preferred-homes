@@ -1,4 +1,4 @@
-# Blacksmith Boilerpalte
+# Boilerplate
 
 ## Getting Started
 
