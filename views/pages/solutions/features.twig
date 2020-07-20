@@ -1,0 +1,27 @@
+<section id="features" class="features">
+    <div class="features__wrapper">
+        <div class="features__col features__col--one">
+			<div class="features__decoration">
+				{% include 'shared/media.twig' with {
+					source: theme.link ~ '/src/assets/img/dev/pages/solutions/features-decoration.svg',
+					alt: 'Features',
+					class: 'features__decoration--img',
+				}%}
+			</div>
+			<header class="features__heading">
+				<h2 class="features__title">{{ post.get_field('features_title') }}</h2>
+                {{ post.get_field('features_subtitle') }}
+			</header>
+			{{ post.get_field('features_content') }}
+        </div>
+        <div class="features__col features__col--two">
+            <picture class="features__featured-image">
+                {% include 'shared/media.twig' with {
+                    source: post.get_field('features_image').url,
+                    alt: post.get_field('features_image').alt,
+                    class: 'features__featured-img',
+                }%}
+            </picture>
+        </div>
+    </div>
+</section>

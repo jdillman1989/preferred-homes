@@ -1,0 +1,25 @@
+{% block html_head_container %}
+
+	{% include 'layout/html-head.twig' %}
+
+{% endblock %}
+
+	<body class="{{ body_class }}">
+
+		{% include 'layout/header.twig' %}
+
+		<div id="main-content" role="main" class="content" data-template="{{ template }}">
+
+			{% block content %}{% endblock %}
+
+		</div>
+
+		{# Adding a comment as a t #}
+
+		{% include 'layout/footer.twig' %}
+
+		{% include 'shared/scripts.twig' %}
+
+		{{ wp_footer }}
+	</body>
+</html>

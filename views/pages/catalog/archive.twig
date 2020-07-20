@@ -1,0 +1,82 @@
+<section id="archive" class="archive">
+	<div class="archive__wrapper">
+		<div class="archive__filters">
+
+			<form class="archive__filters--search" id="searchPosts">
+				<div class="search-input-container">
+					<input type="text" id="searchQuery" placeholder="Search Title or Description">
+				</div>
+				<button type="submit">
+					{% include 'icons/search.svg.twig' %}
+				</button>
+			</form>
+
+			<div class="archive__filters--taxonomies">
+
+				<div class="archive__filters--taxonomies-filter filter-label">
+					<div class="taxonomy-wrapper">
+						<span>Filter By:</span>
+					</div>
+				</div>
+
+				{% for taxonomy in taxonomies %}
+					<button class="archive__filters--taxonomies-filter filter-button">
+						<div class="taxonomy-wrapper">
+							<p class="filter-button__text">
+								{{ taxonomy.label }}: 
+								<span id="{{ taxonomy.slug }}-current">
+									{% if taxonomy.slug == tax_query %}
+										{{ term_label }}
+									{% else %}
+										(ALL)
+									{% endif %}
+								</span>
+							</p>
+						</div>
+						<ul class="archive__filters--terms {{ taxonomy.slug }}-terms-list">
+							<li class="term-item" data-tax="{{ taxonomy.slug }}" data-term="all">All</li>
+
+							{% for term in taxonomy.terms %}
+								<li class="term-item" data-tax="{{ taxonomy.slug }}" data-term="{{ term.slug }}">{{ term.label }}</li>
+							{% endfor %}
+
+						</ul>
+					</button>
+				{% endfor %}
+
+			</div>
+		</div>
+		<div class="archive__posts">
+			<div class="archive__posts--wrapper">
+
+				{% for post in posts %}
+					<article class="archive__posts--card card">
+						<div class="card__wrapper">
+
+							{% if post.thumbnail.src %}
+								<picture>
+									<img alt="{{ post.title }}" class="lazyload card__image" src="{{ post.thumbnail.src }}" data-img/>
+								</picture>
+							{% endif %}
+
+							<div class="card__meta">
+								<h3 data-title>{{ post.title }}</h3>
+								<p data-date>{{ post.date }}</p>
+							</div>
+						</div>
+						<a href="{{ post.link }}" class="btn btn--var-simple btn--size-normal btn--style-dark-primary" data-url>
+							<span class="btn__text">Read Article</span>
+							<span class="btn__icon">
+								{% include 'icons/button-arrow.svg.twig' %}
+							</span>
+						</a>
+					</article>
+				{% endfor %}
+
+			</div>
+			<div class="archive__posts--button">
+				{{ next_button }}
+			</div>
+		</div>
+	</div>
+</section>

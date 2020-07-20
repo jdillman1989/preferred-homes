@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% set template = 'portfolio' %}
+
+{% block content %}
+	<div id="portfolio" class="page page--portfolio">
+		{% include 'pages/portfolio/hero.twig' %}
+		{% include 'shared/contact-bar.twig' %}
+		{% include 'pages/portfolio/benefits.twig' %}
+		{% include 'pages/portfolio/features.twig' %}
+		{% include 'pages/portfolio/ecosystem.twig' %}
+		{% include 'pages/portfolio/resource.twig' %}
+		{% include 'sections/remote-learning.twig' %}
+		{% include 'sections/case-studies.twig' %}
+	</div>
+{% endblock %}

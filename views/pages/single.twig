@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% set template = 'single' %}
+
+{% block content %}
+
+	<article class="single">
+		<div class="single__wrapper">
+			<div class="single__content">
+				{{ post.content }}
+			</div>
+		</div>
+	</article>
+
+{% endblock %}

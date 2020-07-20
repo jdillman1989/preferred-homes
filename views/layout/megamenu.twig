@@ -1,0 +1,76 @@
+<div class="megamenu" data-index="{{ index }}">
+	{% include 'shared/dec-circle.twig' %}
+
+	<div class="megamenu__decoration">
+		{% include 'shared/media.twig' with {
+			source: data.decoration.url,
+			alt: data.top.title,
+			class: 'megamenu__decoration-image',
+		}%}
+	</div>
+
+	<div class="megamenu__scroll-wrapper">
+		<div class="megamenu__wrapper">
+			<div class="megamenu__col megamenu__col--left">
+				<nav class="megamenu__nav nav">
+					<ul class="nav__list">
+
+						{% for item in data.submenu %}
+							<li
+								class="nav__item {{ loop.index0 == 0 ? 'nav__item--active' }}"
+								data-index="{{ loop.index0 }}">
+								<a
+									href="{{ item.link }}"
+									class="nav__item-link">
+									<span class="nav__item-text">{{ item.label }}</span>
+									{% include 'shared/media.twig' with {
+										source: theme.link ~ '/src/assets/img/prod/general/link-out-arrow.svg',
+										alt: 'Learn More',
+										class: 'nav__item-icon',
+									}%}
+								</a>
+							</li>
+						{% endfor %}
+
+					</ul>
+				</nav>
+			</div>
+
+			<div class="megamenu__col megamenu__col--right">
+				<div class="megamenu__tabs tabs">
+
+					{% for item in data.submenu %}
+						<div
+							class="tabs__tab tab {{ loop.index0 == 0 ? 'tabs__tab--active' }}"
+							data-index="{{ loop.index0 }}">
+							<div class="tab__wrapper">
+								<div class="tab__col tab__col--left">
+									<h2 class="tab__title">{{ item.label }}</h2>
+									<div class="tab__description">{{ item.description }}</div>
+									<div class="tab__cta">
+										{% include 'shared/button.twig' with {
+											href: item.link,
+											label: 'Learn More',
+											style: 'primary-border',
+										}%}
+									</div>
+								</div>
+
+								<div class="tab__col tab__col--right">
+									<picture class="tab__picture">
+										{% include 'shared/media.twig' with {
+											source: item.image.url,
+											alt: item.label,
+											class: 'tab__image',
+										}%}
+									</picture>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

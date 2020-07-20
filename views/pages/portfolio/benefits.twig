@@ -1,0 +1,57 @@
+<section id="benefits" class="benefits">
+	<div class="benefits__wrapper">
+
+		<header>
+			<div class="benefits__decoration">
+				{% include 'shared/media.twig' with {
+					source: theme.link ~ '/src/assets/img/dev/pages/portfolio/benefits-decoration.svg',
+					alt: 'bulb',
+					class: 'benefits__decoration--img',
+				}%}
+			</div>
+			<h2>{{ post.get_field('benefits_title') }}</h2>
+		</header>
+
+		<div class="benefits__slider slider mobile-only-slider">
+			<div class="slider__items owl-carousel">
+
+				{% for item in post.get_field('benefits_items') %}
+					<div class="slider__item item">
+						<div class="item__wrapper">
+							{% include 'shared/media.twig' with {
+								source: item.item_image.url,
+								alt: item.item_image.alt
+							}%}
+							{{ item.item_content }}
+						</div>
+					</div>
+				{% endfor %}
+
+				<div class="placeholder-item"></div>
+			</div>
+
+			<nav class="slider__controls">
+				<button
+					class="slider__arrow slider__arrow--prev"
+					data-direction="prev">
+					{% include 'icons/slider-arrow.svg.twig' with {
+						direction: 'prev',
+					}%}
+				</button>
+
+				<div class="slider__indicator">
+					<span class="slider__indicator-current">1</span>
+					<span class="slider__indicator-total">/{{ post.get_field('benefits_items') | length }}</span>
+				</div>
+
+				<button
+					class="slider__arrow slider__arrow--prev"
+					data-direction="next">
+					{% include 'icons/slider-arrow.svg.twig' with {
+						direction: 'next',
+					}%}
+				</button>
+			</nav>
+		</div>
+	</div>
+</section>
