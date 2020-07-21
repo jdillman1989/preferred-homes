@@ -1,3 +1,23 @@
-<section id="hero" class="hero">
-
+<section class="hero" style="
+	background-image: url(
+		{% if post.get_field('hero_background') %}
+			{{ post.get_field('hero_background').url }}
+		{% else %}
+			{{ theme.link ~ '/dist/images/default.jpg' }}
+		{% endif %}
+	);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+" title="{{ post.get_field('hero_background').alt }}">
+	<div class="hero__wrapper">
+		<h1>Preferred Homes</h1>
+		<div class="hero__typography">
+			<p>Specializing in</p>
+			<p class="hero__typography--banner"><span>Quality Affordable Homes</span></p>
+			<p>Family Owned and Operated Since 1977</p>
+		</div>
+		<a href="/" class="ph-button">See Our Homes</a>
+	</div>
 </section>

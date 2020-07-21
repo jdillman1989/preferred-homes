@@ -44,6 +44,7 @@ class App {
 
 		this.menu = new Menu();
 		this.menu.setupMobile();
+		this.menu.setupScroll();
 	}
 }
 

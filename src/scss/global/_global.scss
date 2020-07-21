@@ -1,10 +1,22 @@
 body {
 	overflow-x: hidden;
-	font-family: serif;
+	font-family: $body-copy;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	color: $color-copy;
+	font-size: rem-calc(15);
+	line-height: rem-calc(27);
 }
 
-#main-content {
+* {
+	box-sizing: border-box;
+}
+
+#main {
 	overflow-x: hidden;
+}
+
+img {
+	width: 100%;
+	height: auto;
 }

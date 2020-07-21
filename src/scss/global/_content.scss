@@ -3,4 +3,8 @@
 	max-width: rem-calc(1920);
 	margin-right: auto;
 	margin-left: auto;
+
+	@include media('>phone') {
+		width: 90%;
+	}
 }

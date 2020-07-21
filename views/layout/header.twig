@@ -1,3 +1,42 @@
 <header class="site-header">
-
+	<nav class="top-nav">
+		<div class="top-nav__wrapper">
+			<a href="tel:6165343400" class="top-nav__link--phone">616.534.3400</a>
+			<a href="mailTo:info@preferredhomesmi.com" class="top-nav__link--email">info@PreferredHomesMi.com</a>
+		</div>
+	</nav>
+	<nav class="main-nav" id="mainNav">
+		<div class="main-nav__wrapper">
+			<div class="main-nav__logo">
+				<a href="/" class="main-nav__logo--link">
+					<img src="{{ theme.link ~ '/dist/images/logo.jpg' }}" alt="Preferred Homes Logo">
+				</a>
+			</div>
+			<ul class="main-nav__list" id="mainNavList">
+				<li>
+					<span class="main-nav__list--item has-submenu">
+						Our Homes
+						<ul class="main-nav__list--item--submenu">
+							<li>
+								<a href="/">Available Floor Plans</a>
+							</li>
+							<li>
+								<a href="/">Displayed Singlewides</a>
+							</li>
+							<li>
+								<a href="/">Displayed Doublewides</a>
+							</li>
+						</ul>
+					</span>
+				</li>
+				<li>
+					<a href="/" class="main-nav__list--item">About</a>
+				</li>
+				<li>
+					<a href="/" class="main-nav__list--item">Financing</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="mobile-nav" id="mobileNav"></div>
 </header>

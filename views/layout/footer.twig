@@ -1,3 +1,31 @@
 <footer class="site-footer">
-	{{ 'now'|date('Y') }}
+	<div class="site-footer__wrapper">
+		<div class="site-footer__copy">
+			<p><a href="/">Privacy Policy</a></p>
+			<p>Information deemed reliable but not guaranteed, prices subject to change.</p>
+			<p>&copy; {{ 'now'|date('Y') }} Preferred Homes, All Rights Reserved</p>
+		</div>
+		<nav class="site-footer__nav">
+			<ul class="site-footer__nav--social">
+				<li>
+					<a href="/" class="site-footer__nav--social--item facebook">
+						<span>facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="/" class="site-footer__nav--social--item twitter">
+						<span>twitter</span>
+					</a>
+				</li>
+				<li>
+					<a href="/" class="site-footer__nav--social--item instagram">
+						<span>instagram</span>
+					</a>
+				</li>
+			</ul>
+			<a href="/" class="site-footer__nav--bbb">
+				<img src="{{ theme.link ~ '/dist/images/bbb.png' }}" alt="BBB Badge">
+			</a>
+		</nav>
+	</div>
 </footer>

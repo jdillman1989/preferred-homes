@@ -5,12 +5,12 @@
 @import './utils/mixins';
 
 // Vendor
+@import './global/_reset';
 @import './vendor/normalize';
 
 // Global
 @import './global/typography';
 @import './global/global';
-@import './global/_reset';
 @import './global/_content';
 
 // Components
@@ -18,7 +18,6 @@
 
 // Layout
 @import './layout/_header';
-@import './layout/_menu';
 @import './layout/_footer';
 
 // Pages

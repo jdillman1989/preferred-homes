@@ -1,0 +1,30 @@
+.page--home .intro {
+	background: white;
+	padding: rem-calc(70) rem-calc(15);
+
+	&__wrapper {
+		@extend %container;
+
+		width: 80%;
+	}
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		justify-content: center;
+
+		&--item {
+			width: rem-calc(230);
+			margin: 0 rem-calc(20);
+			display: block;
+			text-transform: uppercase;
+		}
+
+		&--icon {
+			width: 85%;
+			margin: 0 auto;
+			margin-bottom: rem-calc(15);
+		}
+	}
+}

@@ -1,9 +1,66 @@
-@font-face {
-	font-family: 'Helvetica';
-	src: url('../../src/assets/fonts/helvetica/Helvetica.woff2') format('woff2'),
-		url('../../src/assets/fonts/helvetica/Helvetica.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;600;700&display=swap');
+
+$body-copy: 'Open Sans', sans-serif;
+$heading-copy: 'Source Sans Pro', sans-serif;
+
+$font-xlarge: 70;
+$font-large: 34;
+$font-medium: 29;
+$font-small: 20;
+
+h1,
+.h-one,
+h2,
+.h-two,
+h3,
+.h-three {
+	font-family: $heading-copy;
+	font-weight: 700;
+	letter-spacing: rem-calc(2);
 }
 
+h1,
+.h-one {
+	font-size: rem-calc($font-large);
+	color: white;
+	text-transform: uppercase;
+	line-height: 1;
+
+	@include media('>phone') {
+		font-size: rem-calc($font-xlarge);
+	}
+}
+
+h2,
+.h-two {
+	font-size: rem-calc($font-medium);
+	color: $color-copy;	
+
+	@include media('>phone') {
+		font-size: rem-calc($font-large);
+	}
+}
+
+h3,
+.h-three {
+	font-size: rem-calc($font-small);
+	color: $color-copy;
+}
+
+p {
+	margin-bottom: rem-calc(16);
+
+	> a {
+		color: $color-secondary;
+		text-decoration: none;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}

@@ -1,3 +1,97 @@
 .page--home .hero {
 	position: relative;
+	min-height: 100vh;
+	padding: rem-calc(200) rem-calc(15) rem-calc(30);
+	text-align: center;
+
+	h1 {
+		position: relative;
+		display: inline-block;
+		margin-bottom: rem-calc(55);
+
+		&::before,
+		&::after {
+			content: '-';
+			position: absolute;
+			top: rem-calc(-3);
+		}
+
+		&::before {
+			left: rem-calc(-40);
+		}
+
+		&::after {
+			right: rem-calc(-40);
+		}
+	}
+
+	.ph-button {
+		text-transform: uppercase;
+		font-weight: 200;
+	}
+
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__typography {
+		color: white;
+		text-transform: uppercase;
+		margin-bottom: rem-calc(30);
+		
+		p {
+			text-shadow: 0 2px 8px black;
+			font-size: rem-calc($font-medium);
+			font-family: $heading-copy;
+			font-weight: 600;
+			margin-bottom: rem-calc(30);
+			letter-spacing: rem-calc(3);
+
+			&:last-of-type {
+				font-size: rem-calc($font-small);
+			}
+		}
+
+		&--banner {
+			display: inline-block;
+			position: relative;
+
+			span {
+				background: $color-primary;
+				padding: rem-calc(20) rem-calc(30);
+				display: block;
+				width: 100%;
+				position: relative;
+				z-index: 1;
+				font-family: $body-copy;
+				font-size: rem-calc($font-medium + 3);
+				letter-spacing: initial;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				top: 15%;
+				width: 0;
+				height: 0;
+			}
+	
+			&::before {
+				left: rem-calc(-35);
+				border-left: 20px solid transparent;
+				border-right: 25px solid $color-secondary;
+				border-bottom: 35px solid $color-secondary;
+				border-top: 35px solid $color-secondary;
+			}
+	
+			&::after {
+				right: rem-calc(-35);
+				border-left: 25px solid $color-secondary;
+				border-right: 20px solid transparent;
+				border-bottom: 35px solid $color-secondary;
+				border-top: 35px solid $color-secondary;
+			}
+		}
+	}
 }
