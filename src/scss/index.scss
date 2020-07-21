@@ -7,57 +7,19 @@
 // Vendor
 @import './vendor/normalize';
 
-// Placeholders
-@import './placeholders/media';
-
-// Base
-@import './base/_reset';
-@import './base/_content';
-
 // Global
 @import './global/typography';
 @import './global/global';
+@import './global/_reset';
+@import './global/_content';
 
 // Components
 @import './shared/button';
-@import './shared/media';
-@import './shared/contact-bar';
-@import './shared/modal';
-@import './shared/video-button';
 
 // Layout
 @import './layout/_header';
-@import './layout/_mobile-menu';
-@import './layout/_megamenu';
+@import './layout/_menu';
 @import './layout/_footer';
 
 // Pages
 @import './pages/home/_home';
-@import './pages/solutions/_solutions';
-@import './pages/portfolio/_portfolio';
-@import './pages/pricing/_pricing';
-@import './pages/catalog/_catalog';
-
-// Sections
-@import './sections/_remote-learning';
-@import './sections/_case-studies';
-@import './sections/_faq';
-
-// Templates
-@import './templates/not-found/not-found';
-
-@import './elementor/elementor-general';
-@import './elementor/blog-post-header';
-@import './elementor/quote-section';
-@import './elementor/image-article';
-@import './elementor/image-article-bg';
-@import './elementor/two-column';
-@import './elementor/author-meta';
-@import './elementor/related-content';
-@import './elementor/_generic-centered';
-@import './elementor/_generic-form';
-@import './elementor/_generic-hero';
-@import './elementor/_generic-image-text';
-@import './elementor/_generic-media-gallery';
-@import './elementor/_generic-table';
-@import './elementor/_generic-text-image';

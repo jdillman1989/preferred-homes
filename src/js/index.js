@@ -6,7 +6,7 @@ import Home from './pages/Home';
 
 class App {
 	constructor() {
-		this.content = document.querySelector( '#main-content' );
+		this.content = document.querySelector( '#main' );
 		this.template = this.content.dataset.template;
 
 		this.createPages();
@@ -17,7 +17,7 @@ class App {
 	 * Load Page Classes
 	 */
 	createPages() {
-		this.content = document.querySelector( '#main-content' );
+		this.content = document.querySelector( '#main' );
 
 		this.pages = new Map();
 

@@ -14,18 +14,6 @@ if(function_exists('acf_add_options_page')) :
 	acf_add_options_page($global_page);
 
 	/**
-	 * Not Found.
-	 */
-	$not_found_subpage = array(
-		'parent_slug'   => 'global',
-		'page_title'    => 'Not Found',
-		'menu_title'    => 'Not Found',
-		'menu_slug'     => 'not-found',
-	);
-
-	acf_add_options_sub_page($not_found_subpage);
-
-	/**
 	 * Global Sections.
 	 */
 	$sections_subpage = array(
@@ -36,18 +24,6 @@ if(function_exists('acf_add_options_page')) :
 	);
 
 	acf_add_options_sub_page($sections_subpage);
-
-	/**
-	 * Mega Menu.
-	 */
-	$menu_subpage = array(
-		'parent_slug'   => 'global',
-		'page_title'    => 'Mega Menu',
-		'menu_title'    => 'Mega Menu',
-		'menu_slug'     => 'mega-menu',
-	);
-
-	acf_add_options_sub_page($menu_subpage);
 
 	/**
 	 * Global Options.

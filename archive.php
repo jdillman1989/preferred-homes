@@ -8,6 +8,4 @@
 
 $context = Timber::get_context();
 
-$context = archive_page_template($context, true);
-
-Timber::render('pages/catalog.twig', $context);
+Timber::render('pages/archive.twig', $context);

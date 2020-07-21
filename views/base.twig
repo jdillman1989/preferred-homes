@@ -8,13 +8,11 @@
 
 		{% include 'layout/header.twig' %}
 
-		<div id="main-content" role="main" class="content" data-template="{{ template }}">
+		<main id="main" role="main" class="main" data-template="{{ template }}">
 
 			{% block content %}{% endblock %}
 
-		</div>
-
-		{# Adding a comment as a t #}
+		</main>
 
 		{% include 'layout/footer.twig' %}
 

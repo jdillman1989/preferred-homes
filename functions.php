@@ -20,13 +20,6 @@ if ( ! class_exists( 'Timber' ) ) {
 			echo '<div class="error"><p>Timber has not been activated within the theme. Run `composer install` within theme folder to load Timber dependencies.</p></div>';
 		}
 	);
-
-	add_filter(
-		'template_include',
-		function( $template ) {
-			return get_stylesheet_directory() . '/static/no-timber.html';
-		}
-	);
 	return;
 }
 
@@ -61,16 +54,6 @@ require_once 'library/theme-utils.php';
  * Enqueue Scripts and Styles
  */
 require_once 'library/enqueue-scripts.php';
-
-/**
- *	Custom Post Types
- */
-require_once 'library/post-types.php';
-
-/**
- *	Custom Taxonomies
- */
-require_once 'library/taxonomies.php';
 
 /**
  *  Advanced Custom Fields Related

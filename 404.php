@@ -3,5 +3,4 @@
  * The template for displaying 404 pages (Not Found)
  */
 
-$context = Timber::context();
-Timber::render( 'pages/not-found.twig', $context );
+echo "<h1>404: Content not Found</h1>";

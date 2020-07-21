@@ -16,6 +16,6 @@ export default class {
 	 * @return NA
 	 */
 	setupMobile() {
-
+		console.log( 'Menu' );
 	}
 }

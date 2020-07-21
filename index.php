@@ -10,7 +10,4 @@
 $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 $templates        = array( 'default.twig' );
-if ( is_home() ) {
-	array_unshift( $templates, 'pages/front.twig', 'pages/blog.twig' );
-}
 Timber::render( $templates, $context );
