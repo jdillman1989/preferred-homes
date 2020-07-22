@@ -13,8 +13,12 @@
 @import './global/global';
 @import './global/_content';
 
+// Dependencies
+@import '../../node_modules/swiper/swiper.scss';
+
 // Components
 @import './shared/button';
+@import './shared/testimonials';
 
 // Layout
 @import './layout/_header';

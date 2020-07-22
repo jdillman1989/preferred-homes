@@ -1,6 +1,7 @@
 import './utils/polyfills';
 
 import Menu from './shared/Menu';
+import Testimonials from './shared/Testimonials';
 
 import Home from './pages/Home';
 
@@ -45,6 +46,9 @@ class App {
 		this.menu = new Menu();
 		this.menu.setupMobile();
 		this.menu.setupScroll();
+
+		this.testimonials = new Testimonials();
+		this.testimonials.setupSwiper();
 	}
 }
 

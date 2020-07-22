@@ -1,8 +1,12 @@
 .page--home .hero {
 	position: relative;
 	min-height: 100vh;
-	padding: rem-calc(200) rem-calc(15) rem-calc(30);
+	padding: rem-calc(250) rem-calc(15) rem-calc(30);
 	text-align: center;
+
+	@include media('>phone') {
+		padding: rem-calc(200) rem-calc(15) rem-calc(30);
+	}
 
 	h1 {
 		position: relative;
@@ -12,8 +16,13 @@
 		&::before,
 		&::after {
 			content: '-';
+			display: none;
 			position: absolute;
 			top: rem-calc(-3);
+
+			@include media('>phone') {
+				display: block;
+			}
 		}
 
 		&::before {
@@ -58,14 +67,21 @@
 
 			span {
 				background: $color-primary;
-				padding: rem-calc(20) rem-calc(30);
+				padding: rem-calc(10);
 				display: block;
 				width: 100%;
 				position: relative;
 				z-index: 1;
 				font-family: $body-copy;
-				font-size: rem-calc($font-medium + 3);
+				font-size: rem-calc(22);
 				letter-spacing: initial;
+				line-height: 1.6;
+
+				@include media('>phone') {
+					font-size: rem-calc($font-medium + 3);
+					line-height: 1.1;
+					padding: rem-calc(20) rem-calc(30);
+				}
 			}
 
 			&::before,

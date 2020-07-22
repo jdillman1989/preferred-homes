@@ -1,6 +1,10 @@
 .site-footer {
 	background: $color-gray;
-	padding: rem-calc(15) 0;
+	padding: rem-calc(15);
+
+	@include media('>phone') {
+		padding: rem-calc(15) 0;
+	}
 
 	&__wrapper {
 		@extend %container;
@@ -11,6 +15,13 @@
 	}
 
 	&__copy {
+		order: 2;
+		text-align: center;
+
+		@include media('>phone') {
+			order: 1;
+			text-align: left;
+		}
 
 		* {
 			font-size: rem-calc(11);
@@ -25,15 +36,27 @@
 
 	&__nav {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 		flex-wrap: wrap;
+		order: 1;
+		width: 100%;
+
+		@include media('>phone') {
+			order: 2;
+			justify-content: flex-end;
+			width: auto;
+		}
 
 		&--social {
 			width: 100%;
 			list-style: none;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
 			margin-bottom: rem-calc(12);
+
+			@include media('>phone') {
+				justify-content: flex-end;
+			}
 
 			&--item {
 				padding: 0 rem-calc(6);

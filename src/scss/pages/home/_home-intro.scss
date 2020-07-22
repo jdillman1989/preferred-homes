@@ -5,7 +5,12 @@
 	&__wrapper {
 		@extend %container;
 
-		width: 80%;
+		padding: 0 rem-calc(15);
+
+		@include media('>phone') {
+			width: 80%;
+			padding: 0;
+		}
 	}
 
 	&__grid {

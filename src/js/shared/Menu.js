@@ -22,7 +22,7 @@ export default class {
 		let initialTop = navBar.style.top;
 
 		window.addEventListener( 'scroll', () => {
-			if ( 1 < document.documentElement.scrollTop ) {
+			if ( 1 < document.documentElement.scrollTop && 767 < window.innerWidth ) {
 				navBar.classList.add( 'fixed' );
 				navBar.style.top = headerHeight + 'px';
 			} else {
@@ -32,7 +32,7 @@ export default class {
 		});
 
 		window.addEventListener( 'resize', () => {
-			headerHeight = document.querySelector( '.header__wrapper' ).offsetHeight;
+			headerHeight = document.querySelector( '.top-nav' ).offsetHeight;
 			initialTop = navBar.style.top;
 		});
 	}
@@ -49,6 +49,17 @@ export default class {
 	 * @return NA
 	 */
 	setupMobile() {
-		console.log( 'Menu' );
+		const mobileIcon = document.querySelector( '#mobileNav' );
+		const mainNavList = document.querySelector( '#mainNavList' );
+
+		mobileIcon.addEventListener( 'click', () => {
+			mainNavList.classList.toggle( 'mobile-visible' );
+		});
+
+		window.addEventListener( 'resize', () => {
+			if ( 1023 < window.innerWidth ) {
+				mainNavList.classList.remove( 'mobile-visible' );
+			}
+		});
 	}
 }

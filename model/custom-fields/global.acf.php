@@ -7,7 +7,9 @@ $group_args = [
 ];
 
 $fields = [
-
+	// Testimonials
+	['tab', 'Testimonials', ['placement' => 'left']],
+	['image', 'Testimonials Background ', ['return_format' => 'array']],
 ];
 
 $field_group = core_register_field_group('global-sections', $group_args, $fields);

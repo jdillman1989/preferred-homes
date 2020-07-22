@@ -1,0 +1,38 @@
+<section class="testimonials" style="
+	background-image: url(
+		{% if options.testimonials_background %}
+			{{ options.testimonials_background.url }}
+		{% else %}
+			{{ theme.link ~ '/dist/images/default.jpg' }}
+		{% endif %}
+	);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+" title="{{ options.testimonials_background.alt }}">
+	<div class="testimonials__slider">
+		<div class="testimonials__slider--items swiper-wrapper">
+
+			{% for item in 1..4 %}
+				<article class="testimonials__slider--item swiper-slide" data-index="1">
+					<div class="testimonials__slider--item__wrapper">
+						<div class="testimonials__slider--item__quote">
+							<p>The staff at Preferred were all so amazing! Thanks for getting us into our dream home!</p>
+						</div>
+						<div class="testimonials__slider--item__cite">
+							<cite>Nick</cite>
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+
+		</div>
+		<div class="testimonials__slider--nav">
+			<div class="testimonials__slider--buttons">
+				<button class="testimonials__slider--buttons--previous"><span></span></button>
+				<button class="testimonials__slider--buttons--next"><span></span></button>
+			</div>
+		</div>
+	</div>
+
+</section>

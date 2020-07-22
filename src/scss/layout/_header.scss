@@ -11,12 +11,18 @@
 	padding: rem-calc(10) rem-calc(15);
 	position: fixed;
 	width: 100%;
+	z-index: 1;
 
 	&__wrapper {
 		@extend %container;
 
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include media('>phone') {
+			justify-content: flex-start;
+		}
 	}
 
 	&__link {
@@ -25,9 +31,12 @@
 		&--email {
 			display: block;
 			color: $color-copy;
-			margin-right: rem-calc(20);
 			padding-left: rem-calc(15);
 			position: relative;
+
+			@include media('>phone') {
+				margin-right: rem-calc(20);
+			}
 		}
 
 		&--phone::before {
@@ -66,9 +75,13 @@
 	position: absolute;
 	right: 0;
 	left: 0;
-	top: rem-calc(70);
+	top: rem-calc(90);
 	padding: rem-calc(8) 10%;
 	transition: all .4s;
+
+	@include media('>tablet') {
+		top: rem-calc(70);
+	}
 
 	&::before {
 		content: '';
@@ -98,7 +111,13 @@
 	}
 
 	&__logo {
-		width: rem-calc(120);
+		width: rem-calc(60);
+		flex-shrink: 0;
+		display: flex;
+
+		@include media('>tablet') {
+			width: rem-calc(120);
+		}
 
 		&--link {
 			display: flex;
@@ -108,9 +127,29 @@
 	}
 
 	&__list {
-		display: flex;
-		justify-content: flex-end;
-		list-style: none;
+		display: block;
+		max-height: 0;
+		transition: all .4s;
+		position: absolute;
+		top: calc(100% + 7px);
+		left: 0;
+		right: 0;
+		width: 100%;
+		overflow: scroll;
+		background: white;
+
+		@include media('>tablet') {
+			display: flex;
+			justify-content: flex-end;
+			max-height: none;
+			position: static;
+			overflow: visible;
+			background: transparent;
+		}
+
+		&.mobile-visible {
+			max-height: 90vh;
+		}
 
 		li {
 			display: flex;
@@ -119,32 +158,50 @@
 		}
 
 		&--item {
-			display: flex;
-			align-items: center;
-			text-decoration: none;
-			padding: 0 rem-calc(15);
+			display: block;
+			padding: rem-calc(10);
+			padding-bottom: 0;
+			border-bottom: 1px solid $color-gray;
+			width: 100%;
 			color: $color-primary;
-			text-transform: uppercase;
-			font-family: $heading-copy;
-			font-weight: 600;
+
+			@include media('>tablet') {
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				padding: 0 rem-calc(15);
+				text-transform: uppercase;
+				font-family: $heading-copy;
+				font-weight: 600;
+				border-bottom: 0;
+				width: auto;
+			}
 
 			&.has-submenu {
-				position: relative;
-				padding-right: rem-calc(22);
-				cursor: pointer;
+				background: $color-gray;
+
+				@include media('>tablet') {
+					position: relative;
+					padding-right: rem-calc(22);
+					cursor: pointer;
+					background: transparent;
+				}
 
 				&::after {
-					content: '';
-					transition: all .2s;
-					display: block;
-					width: rem-calc(5);
-					height: rem-calc(5);
-					border-bottom: 2px solid $color-primary;
-					border-right: 2px solid $color-primary;
-					transform: rotate(45deg) translateY(-8px);
-					position: absolute;
-					right: rem-calc(12);
-					top: 50%;
+
+					@include media('>tablet') {
+						content: '';
+						transition: all .2s;
+						display: block;
+						width: rem-calc(5);
+						height: rem-calc(5);
+						border-bottom: 2px solid $color-primary;
+						border-right: 2px solid $color-primary;
+						transform: rotate(45deg) translateY(-8px);
+						position: absolute;
+						right: rem-calc(12);
+						top: 50%;
+					}
 				}
 
 				&:hover {
@@ -155,24 +212,33 @@
 			}
 
 			&--submenu {
-				max-height: 0;
-				overflow: scroll;
-				width: rem-calc(250);
-				transition: all .5s;
-				position: absolute;
-				top: calc(100% + 7px);
-				left: 0;
+				border-bottom: 1px solid $color-gray;
 				background: white;
 
+				@include media('>tablet') {
+					max-height: 0;
+					overflow: scroll;
+					width: rem-calc(250);
+					transition: all .5s;
+					position: absolute;
+					top: calc(100% + 7px);
+					left: 0;
+					padding: 0;
+					border-bottom: 0;
+				}
+
 				li:first-of-type a {
-					border-top: 2px solid $color-copy;
+
+					@include media('>tablet') {
+						border-top: 2px solid $color-copy;
+					}
 				}
 
 				a {
 					display: block;
 					width: 100%;
 					text-decoration: none;
-					padding: rem-calc(10);
+					padding: rem-calc(10) rem-calc(10) rem-calc(10) rem-calc(20);
 					color: $color-primary;
 
 					&:hover {
@@ -186,5 +252,27 @@
 }
 
 .mobile-nav {
-	display: none;
+	display: flex;
+	padding: rem-calc(15);
+	cursor: pointer;
+
+	@include media('>tablet') {
+		display: none;
+	}
+
+	span {
+		display: flex;
+		align-items: center;
+		height: rem-calc(22);
+		width: rem-calc(22);
+		border-top: 2px solid $color-primary;
+		border-bottom: 2px solid $color-primary;
+
+		&::before {
+			content: '';
+			height: 2px;
+			width: 100%;
+			background: $color-primary;
+		}
+	}
 }
