@@ -19,6 +19,7 @@
 // Components
 @import './shared/button';
 @import './shared/testimonials';
+@import './shared/page-hero';
 
 // Layout
 @import './layout/_header';
@@ -26,3 +27,4 @@
 
 // Pages
 @import './pages/home/_home';
+@import './pages/archive/_archive';

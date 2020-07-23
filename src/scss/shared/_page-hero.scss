@@ -1,0 +1,13 @@
+.page-hero {
+	min-height: 30vh;
+	padding: rem-calc(160) rem-calc(15) rem-calc(30);
+	text-align: center;
+
+	@include media('>phone') {
+		padding: rem-calc(200) rem-calc(15) rem-calc(90);
+	}
+
+	&__wrapper {
+		@extend %container;
+	}
+}

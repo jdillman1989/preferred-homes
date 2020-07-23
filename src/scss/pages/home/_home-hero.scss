@@ -5,7 +5,7 @@
 	text-align: center;
 
 	@include media('>phone') {
-		padding: rem-calc(200) rem-calc(15) rem-calc(30);
+		padding: rem-calc(200) rem-calc(15) rem-calc(90);
 	}
 
 	h1 {

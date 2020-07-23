@@ -1,0 +1,26 @@
+.page--home .signup {
+	background: $color-gray;
+	padding: rem-calc(70) rem-calc(15);
+
+	&__wrapper {
+		@extend %container;
+
+		padding: 0 rem-calc(15);
+
+		@include media('>phone') {
+			width: 80%;
+			padding: 0;
+		}
+	}
+
+	&__content {
+		max-width: rem-calc(600);
+		margin: 0 auto;
+		text-align: center;
+
+		h2,
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+}

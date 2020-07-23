@@ -1,0 +1,29 @@
+<section class="archive-grid">
+	<div class="archive-grid__wrapper">
+
+		{% for post in posts %}
+			<article class="archive-grid__card">
+				{% if post.thumbnail.src %}
+					<a href="{{ post.link }}" class="archive-grid__card--img">
+						<img src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+					</a>
+				{% endif %}
+				<div class="archive-grid__card--content">
+					<h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
+					<p class="date">{{ post.date }}</p>
+					<p class="excerpt">{{ post.excerpt }}</p>
+				</div>
+			</article>
+		{% endfor %}
+
+	</div>
+
+	<div class="archive-grid__pagination">
+		{% if posts.pagination.prev %}
+			<a href="{{ posts.pagination.prev.link }}">Newer Entries &rarr;</a>
+		{% endif %}
+		{% if posts.pagination.next %}
+			<a href="{{ posts.pagination.next.link }}">&larr; Older Entries</a>
+		{% endif %}
+	</div>
+</section>

@@ -22,6 +22,11 @@ export default class {
 			loop: true,
 			centeredSlides: true,
 
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: true
+			},
+
 			navigation: {
 				nextEl: '.testimonials__slider--buttons--next',
 				prevEl: '.testimonials__slider--buttons--previous'

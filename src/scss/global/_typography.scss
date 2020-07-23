@@ -46,6 +46,11 @@ h3,
 .h-three {
 	font-size: rem-calc($font-small);
 	color: $color-copy;
+	margin-bottom: rem-calc( $font-small );
+}
+
+a {
+	color: inherit;
 }
 
 p {

@@ -1,0 +1,10 @@
+{% extends 'base.twig' %}
+
+{% set template = 'home' %}
+
+{% block content %}
+	<div id="archive" class="page page--archive">
+		{% include 'shared/page-hero.twig' %}
+		{% include 'pages/archive/grid.twig' %}
+	</div>
+{% endblock %}

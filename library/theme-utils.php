@@ -15,3 +15,28 @@
 function assetUrl(string $path) {
 	return TPL_URL."/src/assets/{$path}";
 }
+
+function log_data($data, $label=false) {
+	if ($label) {
+		echo '<pre style="'
+			.'padding: 15px;'
+			.'background: #667;'
+			.'color: #FEE;'
+			.'border-radius: 3px;'
+			.'margin: 5px;'
+			.'font-size: 18px;'
+		.'">';
+		echo $label;
+		echo '</pre>';
+	}
+	echo '<pre style="'
+			.'padding: 15px;'
+			.'background: #335;'
+			.'color: #FEE;'
+			.'border-radius: 3px;'
+			.'margin: 5px;'
+			.'font-size: 12px;'
+		.'">';
+	print_r($data);
+	echo '</pre>';
+}

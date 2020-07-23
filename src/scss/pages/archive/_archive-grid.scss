@@ -1,0 +1,85 @@
+.page--archive .archive-grid {
+	background: white;
+	padding: rem-calc(70) rem-calc(15);
+
+	&__wrapper {
+		@extend %container;
+
+		padding: 0 rem-calc(15);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include media('>phone') {
+			width: 80%;
+			padding: 0;
+		}
+
+		@include media('>tablet') {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__card {
+		width: 100%;
+		border: 1px solid $color-gray;
+		margin-bottom: rem-calc(10);
+
+		@include media('>tablet') {
+			margin: 0 1%;
+		}
+
+		&--img {
+			display: block;
+
+			img {
+				width: 100%;
+				height: auto;
+				max-height: rem-calc(150);
+				object-fit: cover;
+
+				@include media('>phone') {
+					max-height: rem-calc(250);
+				}
+			}
+		}
+
+		&--content {
+			padding: rem-calc(20);
+		}
+
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__pagination {
+		@extend %container;
+
+		padding: 0 rem-calc(15);
+		position: relative;
+		margin-top: rem-calc(30);
+
+		@include media('>phone') {
+			width: 80%;
+			padding: 0;
+		}
+
+		a {
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $color-primary;
+			transition: all .2s;
+
+			&:nth-last-of-type(2) {
+				left: auto;
+				right: 0;
+			}
+
+			&:hover {
+				color: $color-secondary;
+			}
+		}
+	}
+}

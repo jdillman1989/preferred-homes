@@ -1,5 +1,10 @@
 .testimonials {
-	
+	padding: rem-calc(60) 0 rem-calc(40);
+
+	@include media('>tablet') {
+		padding: rem-calc(90) 0 rem-calc(70);
+	}
+
 	&__slider {
 
 		&--items {
@@ -7,7 +12,47 @@
 		}
 
 		&--item {
+			margin-bottom: rem-calc(20);
 
+			&__wrapper {
+				padding: 0 rem-calc(15);
+				max-width: rem-calc(500);
+				margin: 0 auto;
+			}
+
+			&__quote {
+				background: white;
+				border-radius: 10px;
+				padding: rem-calc(20);
+				text-align: center;
+				position: relative;
+				margin-bottom: rem-calc(20);
+
+				&::before {
+					content: '';
+					background: white;
+					width: rem-calc(30);
+					height: rem-calc(30);
+					transform: rotate(45deg) translateX(-65%);
+					position: absolute;
+					bottom: rem-calc(-20);
+					left: 50%;
+					z-index: -1;
+				}
+
+				p:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+
+			&__cite {
+				text-align: center;
+				color: white;
+				font-family: $heading-copy;
+				text-transform: uppercase;
+				font-size: rem-calc(25);
+				font-weight: 500;
+			}
 		}
 
 		&--nav {
@@ -15,13 +60,28 @@
 		}
 
 		&--buttons {
-			
-			&--previous {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
+			button {
+				background: white;
+				border-radius: 100px;
+				padding: rem-calc(10);
+				margin: rem-calc(7);
 			}
 
-			&--next {
+			span {
+				display: block;
+				border-left: 2px solid $color-copy;
+				border-bottom: 2px solid $color-copy;
+				width: rem-calc(7);
+				height: rem-calc(7);
+				transform: rotate(45deg);
+			}
 
+			&--next span {
+				transform: rotate(-135deg);
 			}
 		}
 	}
