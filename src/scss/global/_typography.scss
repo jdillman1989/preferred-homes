@@ -71,3 +71,8 @@ strong {
 em {
 	font-style: italic;
 }
+
+.main ul > li > a {
+	color: $color-secondary;
+	text-decoration: none;
+}

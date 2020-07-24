@@ -10,6 +10,16 @@ $fields = [
 	// Testimonials
 	['tab', 'Testimonials', ['placement' => 'left']],
 	['image', 'Testimonials Background ', ['return_format' => 'array']],
+	['repeater', 'Testimonials Slider', [
+		'sub_fields' => [
+			['text', 'Name'],
+			['textarea', 'Quote'],
+		],
+		'min' => 3,
+		'max' => 12,
+		'layout' => 'block',
+		'button_label' => 'Add Testimonial'
+	]],
 ];
 
 $field_group = core_register_field_group('global-sections', $group_args, $fields);

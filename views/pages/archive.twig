@@ -4,7 +4,9 @@
 
 {% block content %}
 	<div id="archive" class="page page--archive">
-		{% include 'shared/page-hero.twig' %}
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+		}%}
 		{% include 'pages/archive/grid.twig' %}
 	</div>
 {% endblock %}

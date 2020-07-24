@@ -1,0 +1,33 @@
+.page--contact .contact-serving {
+	padding: rem-calc(40) 0;
+
+	&__wrapper {
+		@extend %container;
+
+		max-width: rem-calc(1000);
+	}
+
+	&__grid {
+
+		@include media('>tablet') {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+	}
+
+	&__column {
+		border: 1px solid $color-gray;
+		padding: rem-calc(20);
+		margin-bottom: rem-calc(20);
+
+		@include media('>tablet') {
+			width: 48%;
+			padding: rem-calc(25);
+		}
+	}
+
+	h2 {
+		text-align: center;
+	}
+}

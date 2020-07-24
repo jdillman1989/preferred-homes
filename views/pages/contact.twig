@@ -1,0 +1,13 @@
+{% extends 'base.twig' %}
+
+{% set template = 'contact' %}
+
+{% block content %}
+	<div id="contact" class="page page--contact">
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+		}%}
+		{% include 'pages/contact/form.twig' %}
+		{% include 'pages/contact/serving.twig' %}
+	</div>
+{% endblock %}

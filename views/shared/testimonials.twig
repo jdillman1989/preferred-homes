@@ -13,14 +13,14 @@
 	<div class="testimonials__slider">
 		<div class="testimonials__slider--items swiper-wrapper">
 
-			{% for item in 1..4 %}
-				<article class="testimonials__slider--item swiper-slide" data-index="1">
+			{% for item in options.testimonials_slider %}
+				<article class="testimonials__slider--item swiper-slide" data-index="{{ loop.index }}">
 					<div class="testimonials__slider--item__wrapper">
 						<div class="testimonials__slider--item__quote">
-							<p>The staff at Preferred were all so amazing! Thanks for getting us into our dream home!</p>
+							<p>{{ item.quote }}</p>
 						</div>
 						<div class="testimonials__slider--item__cite">
-							<cite>Nick</cite>
+							<cite>{{ item.name }}</cite>
 						</div>
 					</div>
 				</article>

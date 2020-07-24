@@ -1,0 +1,115 @@
+.page--contact .contact-form {
+	padding: rem-calc(40) 0;
+	border-top: 10px solid $color-gray;
+
+	&__wrapper {
+		@extend %container;
+
+		max-width: rem-calc(1000);
+
+		@include media('>tablet') {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__left {
+
+		@include media('>tablet') {
+			width: 70%;
+		}
+
+		&--hours {
+
+			@include media('>tablet') {
+				width: 90%;
+				margin: 0 auto;
+				margin-bottom: rem-calc(30);
+			}
+		}
+	}
+
+	&__right {
+
+		@include media('>tablet') {
+			width: 27%;
+		}
+
+		&--contacts {
+			list-style: none;
+			padding-left: rem-calc(40);
+			position: relative;
+
+			li {
+				margin-bottom: rem-calc(25);
+
+				span {
+					text-transform: uppercase;
+					letter-spacing: initial;
+					display: block;
+					margin-bottom: rem-calc(15);
+				}
+
+				ul li {
+					margin-bottom: rem-calc(7);
+				}
+			}
+		}
+	}
+
+	.icon {
+		$mobile-size: 28;
+
+		&__mail::before {
+			content: '';
+			background-image: url('../../dist/images/mail.svg');
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: rem-calc($mobile-size);
+			height: rem-calc($mobile-size);
+			position: absolute;
+			top: 2px;
+			left: 0;
+		}
+
+		&__location::before {
+			content: '';
+			background-image: url('../../dist/images/mail.svg');
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: rem-calc($mobile-size);
+			height: rem-calc($mobile-size);
+			position: absolute;
+			top: 2px;
+			left: 0;
+		}
+
+		&__web::before {
+			content: '';
+			background-image: url('../../dist/images/mail.svg');
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: rem-calc($mobile-size);
+			height: rem-calc($mobile-size);
+			position: absolute;
+			top: 2px;
+			left: 0;
+		}
+
+		&__phone::before {
+			content: '';
+			background-image: url('../../dist/images/mail.svg');
+			background-size: contain;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: rem-calc($mobile-size);
+			height: rem-calc($mobile-size);
+			position: absolute;
+			top: 2px;
+			left: 0;
+		}
+	}
+}

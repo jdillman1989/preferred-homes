@@ -4,7 +4,9 @@
 
 {% block content %}
 	<div id="about" class="page page--about">
-		{% include 'shared/page-hero.twig' %}
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+		}%}
 		{% include 'pages/about/content-image.twig' %}
 		{% include 'pages/about/team.twig' %}
 		{% include 'shared/testimonials.twig' %}
