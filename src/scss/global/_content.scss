@@ -3,6 +3,7 @@
 	max-width: rem-calc(1920);
 	margin-right: auto;
 	margin-left: auto;
+	padding: 0 rem-calc(15);
 
 	@include media('>phone') {
 		width: 90%;

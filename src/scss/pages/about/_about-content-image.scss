@@ -1,0 +1,39 @@
+.page--about .content-image {
+	padding: rem-calc(40) 0;
+	border-top: 10px solid $color-gray;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2 {
+			text-align: center;
+		}
+	}
+
+	&__grid {
+
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.content-image-text {
+
+			@include media('>phone') {
+				width: 48%;
+			}
+		}
+	
+		.content-image-photo {
+			width: 100%;
+	
+			@include media('>phone') {
+				width: 48%;
+			}
+		}
+	}
+}

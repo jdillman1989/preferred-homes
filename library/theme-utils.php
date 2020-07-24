@@ -40,3 +40,8 @@ function log_data($data, $label=false) {
 	print_r($data);
 	echo '</pre>';
 }
+
+function formidable_disable_styles() {
+	wp_dequeue_style('formidable');
+}
+add_action('wp_enqueue_scripts', 'formidable_disable_styles', 100);

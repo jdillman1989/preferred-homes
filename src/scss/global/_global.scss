@@ -20,3 +20,62 @@ img {
 	width: 100%;
 	height: auto;
 }
+
+input {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	appearance: none;
+}
+
+.page {
+	.frm_primary_label,
+	.frm_verify,
+	.frm_screen_reader {
+		display: none;
+	}
+
+	.frm_fields_container {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media('>phone') {
+			flex-wrap: nowrap;
+		}
+	}
+
+	.frm_form_field {
+		width: 100%;
+		margin-bottom: rem-calc(15);
+
+		@include media('>phone') {
+			margin-bottom: 0;
+		}
+
+		input {
+			width: 100%;
+			border-radius: 3px;
+			background: white;
+			padding: rem-calc(7) rem-calc(10);
+		}
+	}
+
+	.frm_submit {
+		width: 100%;
+
+		@include media('>phone') {
+			width: rem-calc(300);
+			margin-left: rem-calc(15);
+		}
+
+		button {
+			width: 100%;
+			font-size: rem-calc(15);
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 2px;
+			padding: rem-calc(8) rem-calc(10);
+			text-align: center;
+		}
+	}
+}

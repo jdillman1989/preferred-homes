@@ -1,4 +1,6 @@
-.ph-button {
+.ph-button,
+button[type=submit],
+input[type=submit] {
 	border-radius: 5px;
 	background: $color-primary;
 	letter-spacing: rem-calc(1);

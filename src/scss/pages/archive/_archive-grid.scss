@@ -5,7 +5,6 @@
 	&__wrapper {
 		@extend %container;
 
-		padding: 0 rem-calc(15);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -56,7 +55,6 @@
 	&__pagination {
 		@extend %container;
 
-		padding: 0 rem-calc(15);
 		position: relative;
 		margin-top: rem-calc(30);
 

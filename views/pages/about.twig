@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+
+{% set template = 'about' %}
+
+{% block content %}
+	<div id="about" class="page page--about">
+		{% include 'shared/page-hero.twig' %}
+		{% include 'pages/about/content-image.twig' %}
+		{% include 'pages/about/team.twig' %}
+		{% include 'shared/testimonials.twig' %}
+	</div>
+{% endblock %}

@@ -31,7 +31,13 @@ $fields = [
 		'max' => 12,
 		'layout' => 'block',
 		'button_label' => 'Add Link'
-	]]
+	]],
+
+	// Signup
+	['tab', 'Signup', ['placement' => 'left']],
+	['text', 'Signup Title'],
+	['wysiwyg', 'Signup Text'],
+	['wysiwyg', 'Signup Form'],
 ];
 
 $field_group = core_register_field_group('home', $group_args, $fields);

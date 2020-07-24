@@ -1,0 +1,43 @@
+.page--about .team-intro {
+	padding: rem-calc(20) 0;
+	background: $color-primary;
+	text-align: center;
+
+	@include media('>phone') {
+		padding: rem-calc(30) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+		text-transform: uppercase;
+
+		@include media('>phone') {
+			width: 80%;
+		}
+	}
+
+	h2,
+	.h-two {
+		color: white;
+	}
+}
+
+.page--about .team-members {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__member {
+		margin-bottom: rem-calc(60);
+
+		&:nth-of-type(even) {
+			text-align: right;
+		}
+	}
+}

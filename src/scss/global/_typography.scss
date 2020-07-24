@@ -35,10 +35,12 @@ h1,
 h2,
 .h-two {
 	font-size: rem-calc($font-medium);
-	color: $color-copy;	
+	color: $color-copy;
+	margin-bottom: rem-calc(20);
 
 	@include media('>phone') {
 		font-size: rem-calc($font-large);
+		margin-bottom: rem-calc(30);
 	}
 }
 

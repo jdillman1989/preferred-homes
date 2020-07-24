@@ -1,6 +1,6 @@
 .site-footer {
 	background: $color-gray;
-	padding: rem-calc(15);
+	padding: rem-calc(15) 0;
 
 	@include media('>phone') {
 		padding: rem-calc(15) 0;
