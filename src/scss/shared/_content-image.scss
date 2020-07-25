@@ -1,4 +1,4 @@
-.page--about .content-image {
+.content-image {
 	padding: rem-calc(40) 0;
 	border-top: 10px solid $color-gray;
 
@@ -10,7 +10,7 @@
 		@extend %container;
 
 		h2 {
-			text-align: center;
+			text-transform: uppercase;
 		}
 	}
 

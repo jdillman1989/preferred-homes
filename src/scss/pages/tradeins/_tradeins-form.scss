@@ -1,0 +1,83 @@
+.page--tradeins .tradein-form {
+	padding: rem-calc(20) 0;
+	
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__intro {
+		text-align: center;
+		max-width: rem-calc(1200);
+		margin: 0 auto;
+		margin-bottom: rem-calc(25);
+
+		h2,
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__form {
+		max-width: rem-calc(1000);
+		margin: 0 auto;
+
+		.frm_primary_label {
+			display: block;
+		}
+	
+		.frm_fields_container {
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			@include media('>phone') {
+				flex-wrap: wrap;
+			}
+		}
+	
+		.frm_form_field {
+			width: 100%;
+	
+			@include media('>phone') {
+				width: 48%;
+				margin-bottom: rem-calc(15);
+			}
+	
+			input {
+				border-radius: 0;
+				background: $color-gray;
+			}
+
+			select {
+				margin: 0;
+				width: 100%;
+				appearance: none;
+				background: $color-gray;
+				border: 0;
+				padding: rem-calc(7) rem-calc(10);
+				border-radius: 0;
+			}
+
+			textarea {
+				width: 100%;
+				border: 0;
+				padding: rem-calc(7) rem-calc(10);
+				background: $color-gray;
+			}
+		}
+	
+		.frm_submit {
+	
+			button {
+				width: 100%;
+				font-size: rem-calc(18);
+				text-transform: none;
+				font-weight: 400;
+				letter-spacing: unset;
+				padding: rem-calc(15) rem-calc(20);
+				text-align: center;
+			}
+		}
+
+	}
+}
+

@@ -2,6 +2,7 @@ import './utils/polyfills';
 
 import Menu from './shared/Menu';
 import Testimonials from './shared/Testimonials';
+import Accordion from './shared/Accordion';
 
 import Home from './pages/Home';
 
@@ -49,6 +50,9 @@ class App {
 
 		this.testimonials = new Testimonials();
 		this.testimonials.setupSwiper();
+
+		this.accordion = new Accordion();
+		this.accordion.setup();
 	}
 }
 

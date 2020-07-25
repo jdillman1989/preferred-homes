@@ -57,7 +57,8 @@ function core_field( $type='text', $label='', $args=array(), $unique_key='' ) {
 
 				foreach( $layout[1]['sub_fields'] as $field ) {
 					$field_key = $layout_key;
-					$layout_fields[] = core_field( $field[0], $field[1], $field[2], $field_key );
+					$field_args = (count($field) > 2) ? $field[2] : [];
+					$layout_fields[] = core_field( $field[0], $field[1], $field_args, $field_key );
 				}
 
 				$layouts[$layout_key]['sub_fields'] = $layout_fields;

@@ -1,0 +1,116 @@
+{% for layout in layouts %}
+	{% if layout.acf_fc_layout == "two_column_content_and_image" %}
+		<section class="content-image {{ layout.background_color }} {% if layout.checkmark_lists %}checkmark-lists{% endif %}">
+			<div class="content-image__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+				{% endif %}
+		
+				<div {% if layout.right_image %}class="content-image__grid"{% endif %}>
+					<div class="content-image-text">
+						{{ layout.left_content }}
+					</div>
+		
+					{% if layout.right_image %}
+						<div class="content-image-photo">
+							<img src="{{ layout.right_image.url }}" alt="{{ layout.right_image.alt }}">
+						</div>
+					{% endif %}
+					
+				</div>
+			</div>
+		</section>
+
+	{% elseif layout.acf_fc_layout == "single_column_content" %}
+		<section class="single-column {{ layout.background_color }} {% if layout.checkmark_lists %}checkmark-lists{% endif %}">
+			<div class="single-column__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+				{% endif %}
+				
+				{{ layout.content }}
+			</div>
+		</section>
+
+	{% elseif layout.acf_fc_layout == "two_column_content" %}
+		<section class="two-column {{ layout.background_color }} {% if layout.checkmark_lists %}checkmark-lists{% endif %}">
+			<div class="two-column__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+				{% endif %}
+				
+				<div class="two-column__grid">
+					<div class="two-column__grid--content">
+						{{ layout.left_content }}
+					</div>
+					<div class="two-column__grid--content">
+						{{ layout.right_content }}
+					</div>
+				</div>
+			</div>
+		</section>
+
+	{% elseif layout.acf_fc_layout == "three_column_content" %}
+		<section class="three-column {{ layout.background_color }} {% if layout.checkmark_lists %}checkmark-lists{% endif %}">
+			<div class="three-column__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+				{% endif %}
+				
+				<div class="three-column__grid">
+					<div class="three-column__grid--content">
+						{{ layout.left_content }}
+					</div>
+					<div class="three-column__grid--content">
+						{{ layout.middle_content }}
+					</div>
+					<div class="three-column__grid--content">
+						{{ layout.right_content }}
+					</div>
+				</div>
+			</div>
+		</section>
+
+	{% elseif layout.acf_fc_layout == "grid_accordion" %}
+		<section class="grid-accordion {{ layout.background_color }}">
+			<div class="grid-accordion__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+				{% endif %}
+				
+				<div class="grid-accordion__grid">
+					<div class="grid-accordion__grid--content">
+
+						{% for accordions in layout.left_content %}
+							<div class="accordion">
+								<h3 class="accordion__toggle">{{ accordions.toggle_text }} <span class="accordion__toggle--icon"></span></h3>
+								<div class="accordion__content">
+									{{ accordions.content }}
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+					<div class="grid-accordion__grid--content">
+
+						{% for accordions in layout.right_content %}
+							<div class="accordion">
+								<h3 class="accordion__toggle">{{ accordions.toggle_text }} <span class="accordion__toggle--icon"></span></h3>
+								<div class="accordion__content">
+									{{ accordions.content }}
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	{% endif %}
+{% endfor %}

@@ -20,6 +20,8 @@
 @import './shared/button';
 @import './shared/testimonials';
 @import './shared/page-hero';
+@import './shared/content-image';
+@import './shared/page-builder';
 
 // Layout
 @import './layout/_header';
@@ -30,3 +32,5 @@
 @import './pages/archive/_archive';
 @import './pages/about/_about';
 @import './pages/contact/_contact';
+@import './pages/financing/_financing';
+@import './pages/tradeins/_tradeins';

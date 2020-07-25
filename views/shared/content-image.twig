@@ -1,0 +1,21 @@
+<section class="content-image">
+	<div class="content-image__wrapper">
+
+		{% if title %}
+			<h2 class="centered-title">{{ title }}</h2>
+		{% endif %}
+
+		<div {% if image %}class="content-image__grid"{% endif %}>
+			<div class="content-image-text">
+				{{ text }}
+			</div>
+
+			{% if image %}
+				<div class="content-image-photo">
+					<img src="{{ image.url }}" alt="{{ image.alt }}">
+				</div>
+			{% endif %}
+			
+		</div>
+	</div>
+</section>

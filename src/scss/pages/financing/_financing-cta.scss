@@ -1,0 +1,18 @@
+.page--financing .cta {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		text-align: center;
+
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+}
+

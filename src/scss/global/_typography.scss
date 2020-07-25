@@ -37,6 +37,7 @@ h2,
 	font-size: rem-calc($font-medium);
 	color: $color-copy;
 	margin-bottom: rem-calc(20);
+	line-height: 1.1;
 
 	@include media('>phone') {
 		font-size: rem-calc($font-large);

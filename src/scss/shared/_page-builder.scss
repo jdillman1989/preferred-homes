@@ -1,0 +1,225 @@
+.page {
+
+	.bg-white {
+		background: white;
+	}
+
+	.bg-gray {
+		background: $color-gray;
+	}
+
+	.checkmark-lists ul li {
+		position: relative;
+		padding-left: rem-calc(50);
+		list-style: none;
+		margin-bottom: rem-calc(15);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: rem-calc(30);
+			height: rem-calc(30);
+			background-image: url('../../dist/images/checkmark.png');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	h2.centered-title {
+		text-align: center;
+	}
+}
+
+.single-column {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		max-width: rem-calc(1200);
+
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.two-column {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__grid {
+
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--content {
+			margin-bottom: rem-calc(20);
+
+			@include media('>phone') {
+				width: 48%;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.three-column {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__grid {
+
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--content {
+			margin-bottom: rem-calc(20);
+
+			@include media('>phone') {
+				width: 30%;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.grid-accordion {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__grid {
+
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--content {
+			margin-bottom: rem-calc(20);
+
+			@include media('>phone') {
+				width: 48%;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.accordion {
+	background-color: $color-gray;
+	border: 1px solid darken($color-gray, 30%);
+	transition: all .3s;
+	margin-bottom: rem-calc(15);
+
+	&.active {
+		background-color: white;
+
+		.accordion__content {
+			max-height: rem-calc(500);
+			overflow-y: scroll;
+		}
+
+		.accordion__toggle--icon::after {
+			content: '-';
+			top: -1px;
+		}
+	}
+
+	&__toggle {
+		text-transform: uppercase;
+		padding: rem-calc(15);
+		padding-right: rem-calc(25);
+		position: relative;
+		cursor: pointer;
+		margin-bottom: 0;
+
+		&--icon {
+			position: absolute;
+			right: rem-calc(15);
+			top: rem-calc(18);
+			width: rem-calc(20);
+			height: rem-calc(20);
+			border-radius: 50px;
+			background: darken($color-gray, 30%);
+			color: white;
+			font-size: rem-calc(16);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+
+			&::after {
+				content: '+';
+				position: relative;
+				left: 1px;
+			}
+		}
+	}
+
+	&__content {
+		padding: 0 rem-calc(15);
+		transition: max-height .3s;
+		max-height: 0;
+		overflow: hidden;
+	}
+}
+
+.grid-accordion,
+.three-column,
+.two-column,
+.single-column,
+.content-image {
+
+	ul {
+		list-style: disc outside;
+
+		li {
+			margin-left: rem-calc(20);
+		}
+	}
+}

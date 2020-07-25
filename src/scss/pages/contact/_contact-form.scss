@@ -37,11 +37,11 @@
 
 		&--contacts {
 			list-style: none;
-			padding-left: rem-calc(40);
-			position: relative;
 
 			li {
 				margin-bottom: rem-calc(25);
+				position: relative;
+				padding-left: rem-calc(40);
 
 				span {
 					text-transform: uppercase;
@@ -52,6 +52,7 @@
 
 				ul li {
 					margin-bottom: rem-calc(7);
+					padding-left: 0;
 				}
 			}
 		}
@@ -62,7 +63,7 @@
 
 		&__mail::before {
 			content: '';
-			background-image: url('../../dist/images/mail.svg');
+			background-image: url('../../dist/images/email.svg');
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -75,7 +76,7 @@
 
 		&__location::before {
 			content: '';
-			background-image: url('../../dist/images/mail.svg');
+			background-image: url('../../dist/images/location.svg');
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -88,7 +89,7 @@
 
 		&__web::before {
 			content: '';
-			background-image: url('../../dist/images/mail.svg');
+			background-image: url('../../dist/images/web.svg');
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -101,7 +102,7 @@
 
 		&__phone::before {
 			content: '';
-			background-image: url('../../dist/images/mail.svg');
+			background-image: url('../../dist/images/phone.svg');
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;

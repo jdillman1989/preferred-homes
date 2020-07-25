@@ -1,9 +1,9 @@
 {% extends 'base.twig' %}
 
-{% set template = 'about' %}
+{% set template = 'tradeins' %}
 
 {% block content %}
-	<div id="about" class="page page--about">
+	<div id="tradeins" class="page page--tradeins">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
 		}%}
@@ -12,7 +12,10 @@
 			image: post.get_field('intro_image'),
 			text: post.get_field('intro_text'),
 		}%}
-		{% include 'pages/about/team.twig' %}
+		{% include 'pages/tradeins/form.twig' %}
+		{% include 'shared/page-builder.twig' with {
+			layouts: post.get_field('content_blocks'),
+		}%}
 		{% include 'shared/testimonials.twig' %}
 	</div>
 {% endblock %}

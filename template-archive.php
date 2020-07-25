@@ -9,7 +9,6 @@ global $paged;
 if (!isset($paged) || !$paged){
 	$paged = 1;
 }
-$context = Timber::context();
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 3,
