@@ -129,6 +129,26 @@ $page_builder = [
 					] 
 				],
 
+				[	// Two Column Images
+					'Two Column Images',
+					[
+						'layout' => 'block',
+						'sub_fields' => [
+							['select', 'Background Color', 
+								[
+									'choices' => [
+										'bg-white' => 'White',
+										'bg-gray' => 'Light Gray',
+									],
+								]
+							],
+							['text', 'Centered Title'],
+							['image', 'Left Image', ['return_format' => 'array']],
+							['image', 'Right Image', ['return_format' => 'array']],
+						]
+					] 
+				],
+
 			]
 		]
 	]

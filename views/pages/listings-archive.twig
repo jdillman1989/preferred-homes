@@ -1,0 +1,13 @@
+{% extends 'base.twig' %}
+
+{% set template = 'listings-archive' %}
+
+{% block content %}
+	<div id="listings-archive" class="page page--listings-archive">
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+		}%}
+		{% include 'pages/listings-archive/archive.twig' %}
+		{% include 'shared/testimonials.twig' %}
+	</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<section id="listings-grid" class="listings-grid">
+    <div class="listings-grid__wrapper">
+
+		<div class="listings-grid__intro">
+			{{ post.get_field('archive_intro') }}
+		</div>
+
+		<div class="listings-grid__archive">
+
+			{% for listing in post.get_field('listings_items') %}
+				<a class="listings-grid__archive--item" href="{{ listing.select_listing.link }}">
+					<img src="{{ listing.select_listing.thumbnail.src }}" alt="{{ listing.select_listing.title }}">
+					<h3>{{ listing.select_listing.title }}</h3>
+					<ul>
+						<li>SqFt: {{ listing.select_listing.get_field('sqft') }}</li>
+						<li>Size: {{ listing.select_listing.get_field('size') }}</li>
+						<li>Beds: {{ listing.select_listing.get_field('beds') }}</li>
+						<li>Bathrooms: {{ listing.select_listing.get_field('bathrooms') }}</li>
+					</ul>
+				</a>
+			{% endfor %}
+
+		</div>
+    </div>
+</section>
