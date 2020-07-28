@@ -17,6 +17,7 @@ $group_args = [
 $fields = [
 	// Specs
 	['tab', 'Specs', ['placement' => 'left']],
+	['text', 'Callout'],
 	['text', 'SqFt'],
 	['text', 'Size'],
 	['text', 'Beds'],

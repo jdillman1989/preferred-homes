@@ -209,6 +209,43 @@
 	}
 }
 
+.button-list {
+	padding: rem-calc(40) 0;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2 {
+			text-transform: uppercase;
+		}
+
+		p {
+			text-align: center;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		max-width: rem-calc(1100);
+		margin: 0 auto;
+
+		.ph-button {
+			width: rem-calc(200);
+			margin: rem-calc(10);
+			font-weight: 700;
+			text-align: center;
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
 .grid-accordion,
 .three-column,
 .two-column,

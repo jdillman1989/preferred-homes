@@ -21,6 +21,23 @@
 			justify-content: space-between;
 		}
 
+		&.flip-order {
+
+			.content-image-text{
+
+				@include media('>phone') {
+					order: 2;
+				}
+			}
+			
+			.content-image-photo{
+
+				@include media('>phone') {
+					order: 1;
+				}
+			}
+		}
+
 		.content-image-text {
 
 			@include media('>phone') {

@@ -7,7 +7,11 @@
 					<h2 class="centered-title">{{ layout.centered_title }}</h2>
 				{% endif %}
 		
-				<div {% if layout.right_image %}class="content-image__grid"{% endif %}>
+				<div 
+					{% if layout.right_image %}
+						class="content-image__grid {% if layout.flip_order %}flip-order{% endif %}"
+					{% endif %}
+				>
 					<div class="content-image-text">
 						{{ layout.left_content }}
 					</div>
@@ -127,6 +131,25 @@
 					<div class="two-column__grid--content">
 						<img src="{{ layout.right_image.url }}" alt="{{ layout.right_image.alt }}">
 					</div>
+				</div>
+			</div>
+		</section>
+
+	{% elseif layout.acf_fc_layout == "button_list" %}
+		<section class="button-list {{ layout.background_color }}">
+			<div class="button-list__wrapper">
+		
+				{% if layout.centered_title %}
+					<h2 class="centered-title">{{ layout.centered_title }}</h2>
+					<p>{{ layout.intro }}</p>
+				{% endif %}
+				
+				<div class="button-list__buttons">
+
+					{% for button in layout.buttons %}
+						<a class="ph-button" href="{{ button.button.url }}">{{ button.button.title }}</a>
+					{% endfor %}
+
 				</div>
 			</div>
 		</section>

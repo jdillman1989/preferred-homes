@@ -1,0 +1,46 @@
+.page--pdfs .pdf-lists {
+	padding: rem-calc(40) 0;
+	background: white;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+	
+	&__wrapper {
+		@extend %container;
+
+		h2,
+		h3 {
+			text-transform: uppercase;
+		}
+	}
+
+	&__list {
+		margin-bottom: rem-calc(30);
+
+		&--intro {
+			text-align: center;
+			max-width: rem-calc(1000);
+			margin: 0 auto;
+		}
+
+		&--grid {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		&--item {
+			margin: rem-calc(15) 3%;
+			max-width: rem-calc(270);
+
+			a {
+				max-width: rem-calc(250);
+				display: block;
+				margin: 0 auto;
+				margin-bottom: rem-calc(15);
+			}
+		}
+	}
+}
+

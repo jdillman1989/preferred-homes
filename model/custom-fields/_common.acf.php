@@ -63,6 +63,7 @@ $page_builder = [
 								]
 							],
 							['text', 'Centered Title'],
+							['true_false', 'Flip Order'],
 							['wysiwyg', 'Left Content'],
 							['image', 'Right Image', ['return_format' => 'array']],
 						]
@@ -145,6 +146,34 @@ $page_builder = [
 							['text', 'Centered Title'],
 							['image', 'Left Image', ['return_format' => 'array']],
 							['image', 'Right Image', ['return_format' => 'array']],
+						]
+					] 
+				],
+
+				[	// Button List
+					'Button List',
+					[
+						'layout' => 'block',
+						'sub_fields' => [
+							['select', 'Background Color', 
+								[
+									'choices' => [
+										'bg-white' => 'White',
+										'bg-gray' => 'Light Gray',
+									],
+								]
+							],
+							['text', 'Centered Title'],
+							['text', 'Intro'],
+							['repeater', 'Buttons', [
+								'sub_fields' => [
+									['link', 'Button'],
+								],
+								'min' => 1,
+								'max' => 24,
+								'layout' => 'block',
+								'button_label' => 'Add Button'
+							]],
 						]
 					] 
 				],

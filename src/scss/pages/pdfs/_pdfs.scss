@@ -1,0 +1,21 @@
+.page--pdfs .pdf-intro {
+	padding: rem-calc(40) 0;
+	border-top: 10px solid $color-gray;
+	background: white;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
+
+	&__wrapper {
+		@extend %container;
+
+		text-align: center;
+		max-width: rem-calc(1000);
+		margin: 0 auto;
+	}
+}
+
+/** Sections */
+@import './_pdf-lists';
+
