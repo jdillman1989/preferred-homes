@@ -1,46 +1,49 @@
-.page--tradeins .tradein-form {
-	padding: rem-calc(20) 0;
+.page--suggestions .suggestions-form {
+	padding: rem-calc(40) 0;
+	background: white;
+	border-top: 10px solid $color-gray;
+
+	@include media('>phone') {
+		padding: rem-calc(60) 0;
+	}
 	
 	&__wrapper {
 		@extend %container;
-	}
 
-	&__intro {
-		text-align: center;
-		max-width: rem-calc(1200);
-		margin: 0 auto;
-		margin-bottom: rem-calc(25);
+		max-width: rem-calc(1080);
 
-		h2,
-		h3 {
-			text-transform: uppercase;
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
-	&__form {
-		max-width: rem-calc(1000);
-		margin: 0 auto;
+	&__description {
+		color: $color-primary;
+		font-weight: 700;
+		@include media('>phone') {
+			width: 32%;
+		}
+	}
+
+	&__fields {
+		border: 3px solid $color-primary;
+		padding: rem-calc(20) rem-calc(15);
+
+		@include media('>phone') {
+			width: 65%;
+		}
+
+		.frm_fields_container {
+			display: block;
+		}
 
 		.frm_primary_label {
 			display: block;
 		}
-	
-		.frm_fields_container {
-			justify-content: space-between;
-			flex-wrap: wrap;
 
-			@include media('>phone') {
-				flex-wrap: wrap;
-			}
-		}
-	
 		.frm_form_field {
 			width: 100%;
-	
-			@include media('>phone') {
-				width: 48%;
-				margin-bottom: rem-calc(15);
-			}
 	
 			input {
 				border-radius: 0;
@@ -66,7 +69,9 @@
 		}
 	
 		.frm_submit {
-	
+			margin: 0 auto;
+			margin-top: rem-calc(15);
+
 			button {
 				width: 100%;
 				font-size: rem-calc(18);
@@ -79,4 +84,3 @@
 		}
 	}
 }
-

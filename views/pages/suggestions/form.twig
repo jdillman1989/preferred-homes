@@ -1,0 +1,10 @@
+<section id="suggestions-form" class="suggestions-form">
+    <div class="suggestions-form__wrapper">
+		<div class="suggestions-form__description">
+			{{ post.get_field('form_description') }}
+		</div>
+		<div class="suggestions-form__fields">
+			{{ function('do_shortcode', post.get_field('suggestions_form')) }}
+		</div>
+    </div>
+</section>
