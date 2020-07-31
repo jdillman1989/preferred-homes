@@ -1,0 +1,81 @@
+.page--mobile-landing .mobile-form {
+
+	&__wrapper {
+		max-width: rem-calc(1000);
+		margin-left: auto;
+		margin-right: auto;
+		padding: rem-calc(30) rem-calc(15);
+		padding-bottom: rem-calc(60);
+
+		@include media('>phone') {
+			padding: rem-calc(50) rem-calc(30);
+			padding-bottom: rem-calc(100);
+		}
+
+		h2 {
+			text-align: center;
+		}
+	}
+
+	&__fields {
+
+		.frm_fields_container {
+			display: block;
+		}
+
+		.frm_primary_label {
+			display: block;
+		}
+
+		.frm_form_field {
+			width: 100%;
+			margin-bottom: rem-calc(10);
+	
+			input {
+				border-radius: 0;
+				background: $color-gray;
+			}
+
+			input[type=radio] {
+				appearance: radio;
+				border-radius: initial;
+				width: auto;
+				position: relative;
+				top: -1px;
+				margin-right: rem-calc(8);
+			}
+
+			select {
+				margin: 0;
+				width: 100%;
+				appearance: none;
+				background: $color-gray;
+				border: 0;
+				padding: rem-calc(7) rem-calc(10);
+				border-radius: 0;
+			}
+
+			textarea {
+				width: 100%;
+				border: 0;
+				padding: rem-calc(7) rem-calc(10);
+				background: $color-gray;
+			}
+		}
+	
+		.frm_submit {
+			margin: 0 auto;
+			margin-top: rem-calc(15);
+
+			button {
+				width: 100%;
+				font-size: rem-calc(18);
+				text-transform: none;
+				font-weight: 400;
+				letter-spacing: unset;
+				padding: rem-calc(15) rem-calc(20);
+				text-align: center;
+			}
+		}
+	}
+}

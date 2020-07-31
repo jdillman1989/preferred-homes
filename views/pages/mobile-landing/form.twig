@@ -1,0 +1,8 @@
+<section id="mobile-form" class="mobile-form">
+    <div class="mobile-form__wrapper">
+		<h2>{{ post.get_field('form_intro') }}</h2>
+		<div class="mobile-form__fields">
+			{{ function('do_shortcode', post.get_field('form_code')) }}
+		</div>
+    </div>
+</section>

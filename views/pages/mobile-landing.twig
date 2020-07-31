@@ -1,0 +1,27 @@
+{% set template = 'mobile-landing' %}
+{% block html_head_container %}
+
+	{% include 'layout/html-head.twig' %}
+
+{% endblock %}
+
+	<body class="{{ body_class }}">
+		
+		{% include 'layout/header.twig' %}
+
+		<main id="main" role="main" class="main" data-template="{{ template }}">
+
+			<div id="mobile-landing" class="page page--mobile-landing">
+				{% include 'pages/mobile-landing/hero.twig' %}
+				{% include 'pages/mobile-landing/content.twig' %}
+				{% include 'pages/mobile-landing/form.twig' %}
+				{% include 'shared/testimonials.twig' %}
+			</div>
+
+		</main>
+
+		{% include 'shared/scripts.twig' %}
+
+		{{ wp_footer }}
+	</body>
+</html>

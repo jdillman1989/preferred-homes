@@ -1,0 +1,24 @@
+<section id="mobile-hero" class="mobile-hero" style="
+	background-image: url(
+		{% if post.get_field('hero_image') %}
+			{{ post.get_field('hero_image').url }}
+		{% else %}
+			{{ theme.link ~ '/dist/images/default.jpg' }}
+		{% endif %}
+	);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	" title="{{ post.get_field('hero_image').alt }}"
+>
+    <div class="mobile-hero__wrapper">
+		<h1>{{ post.title }}</h1>
+		<div class="mobile-hero__buttons">
+			{% for button in post.get_field('hero_buttons') %}
+				<a href="{{ button.hero_button.url }}" class="ph-button">{{ button.hero_button.title }}</a>
+			{% endfor %}
+		</div>
+	</div>
+	<button class="content-button" id="contentButton"><span></span></button>
+</section>

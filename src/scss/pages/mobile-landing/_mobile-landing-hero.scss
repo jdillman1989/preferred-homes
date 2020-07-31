@@ -1,0 +1,55 @@
+.page--mobile-landing .mobile-hero {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&__wrapper {
+		@extend %container;
+
+		padding: rem-calc(30) rem-calc(15);
+
+		h1 {
+			text-align: center;
+			color: #efeed9;
+			text-shadow: 0.08em 0.08em 0.08em rgba(25,97,50,0.4);
+			max-width: rem-calc(1000);
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.ph-button {
+			margin: rem-calc(8);
+		}
+	}
+
+	.content-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 100px;
+		padding: rem-calc(10);
+		border: 2px solid #efeed9;
+		position: absolute;
+		right: 50%;
+		transform: translateX(50%);
+		bottom: rem-calc(15);
+		cursor: pointer;
+
+		span {
+			display: block;
+			border-left: 2px solid #efeed9;
+			border-bottom: 2px solid #efeed9;
+			width: rem-calc(7);
+			height: rem-calc(7);
+			transform: rotate(-45deg);
+		}
+	}
+}
+
