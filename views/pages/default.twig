@@ -15,6 +15,27 @@
 				{{ post.content }}
 			</div>
 		</section>
+
 		{% include 'shared/testimonials.twig' %}
+
+		{% if function( 'is_single' ) %}
+			<div class="social-share">
+				<div class="social-share__toggle" id="socialToggle">
+					<span class="social-share__toggle--text">Share This</span>
+					<button class="social-share__toggle--close" id="socialClose">&times;</button>
+				</div>
+				<div class="social-share__menu">
+					<a target="_blank" rel="noopener noreferrer" href="http://www.facebook.com/sharer.php?u=" class="social-share__menu--item facebook-button">
+						<span>Facebook</span>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" href="http://twitter.com/share?text=&url=" class="social-share__menu--item twitter-button">
+						<span>Twitter</span>
+					</a>
+					<a target="_blank" rel="noopener noreferrer" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&su=&body=&ui=2&tf=1" class="social-share__menu--item gmail-button">
+						<span>Gmail</span>
+					</a>
+				</div>
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}

@@ -5,6 +5,7 @@ import Testimonials from './shared/Testimonials';
 import Accordion from './shared/Accordion';
 
 import Home from './pages/Home';
+import Default from './pages/Default';
 import MobileLanding from './pages/MobileLanding';
 
 class App {
@@ -25,6 +26,7 @@ class App {
 		this.pages = new Map();
 
 		this.pages.set( 'home', new Home() );
+		this.pages.set( 'default', new Default() );
 		this.pages.set( 'mobile-landing', new MobileLanding() );
 
 		this.page = this.pages.get( this.template ) || this.pages.get( 'not-found' );

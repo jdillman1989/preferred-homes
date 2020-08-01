@@ -22,3 +22,134 @@
 		font-weight: 700;
 	}
 }
+
+.social-share {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+
+	&.visible {
+
+		.social-share__menu {
+			max-height: 200px;
+		}
+
+		.social-share__toggle--text::after {
+			transform: rotate(135deg) translateY(0);
+		}
+	}
+
+	&__toggle {
+		background: rgba(0, 0, 0, .85);
+		text-align: center;
+		position: relative;
+		font-size: rem-calc(15);
+		cursor: pointer;
+
+		&--text {
+			color: white;
+			padding: rem-calc(10);
+			position: relative;
+			display: inline-block;
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				border-left: 2px solid white;
+				border-bottom: 2px solid white;
+				width: rem-calc(7);
+				height: rem-calc(7);
+				transform: rotate(-45deg) translateY(-100%);
+				transition: all .2s;
+				top: 50%;
+				right: rem-calc(-15);
+			}
+		}
+
+		&--close {
+			position: absolute;
+			color: white;
+			right: 0;
+			top: 0;
+			padding: rem-calc(10);
+			font-size: rem-calc(15);
+			display: block;
+			line-height: rem-calc(27);
+		}
+	}
+
+	&__menu {
+		background: white;
+		overflow: hidden;
+		max-height: 0;
+		transition: all .3s;
+		padding: 0 rem-calc(15);
+
+		&--item {
+			display: block;
+			width: 100%;
+			border-radius: 5px;
+			color: white;
+			padding: rem-calc(10);
+			padding-left: rem-calc(40);
+			position: relative;
+			margin: rem-calc(8) 0;
+		}
+
+		.facebook-button {
+			background: #3A579A;
+			margin-top: rem-calc(15);
+
+			&::before {
+				content: '';
+				width: rem-calc(40);
+				height: rem-calc(40);
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 70%;
+				background-image: url('../../dist/images/facebook-white.svg');
+			}
+		}
+
+		.twitter-button {
+			background: #00ABF0;
+
+			&::before {
+				content: '';
+				width: rem-calc(40);
+				height: rem-calc(40);
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 70%;
+				background-image: url('../../dist/images/twitter-white.svg');
+			}
+		}
+
+		.gmail-button {
+			background: #DD4B39;
+			margin-bottom: rem-calc(15);
+
+			&::before {
+				content: '';
+				width: rem-calc(40);
+				height: rem-calc(40);
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 70%;
+				background-image: url('../../dist/images/mail-white.svg');
+			}
+		}
+	}
+}
