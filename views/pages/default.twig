@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+
+{% set template = 'default' %}
+
+{% block content %}
+	<div id="default" class="page page--default">
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+		}%}
+		<section class="default-content">
+			<div class="default-content__wrapper">
+				{% if function( 'is_single' ) %}
+					<p class="date">{{ post.date }}</p>
+				{% endif %}
+				{{ post.content }}
+			</div>
+		</section>
+		{% include 'shared/testimonials.twig' %}
+	</div>
+{% endblock %}

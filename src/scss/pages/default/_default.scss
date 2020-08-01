@@ -1,0 +1,24 @@
+.page--default .default-content {
+	padding: rem-calc(40) 0;
+	border-top: 10px solid $color-gray;
+
+	@include media('>phone') {
+		padding: rem-calc(80) 0;
+	}
+
+	&__wrapper {
+		@extend %container;
+		
+		padding: 0 rem-calc(15);
+		max-width: rem-calc(1000);
+
+		@include media('>phone') {
+			padding: 0 rem-calc(30);
+		}
+	}
+
+	.date {
+		margin-bottom: rem-calc(50);
+		font-weight: 700;
+	}
+}
