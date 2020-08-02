@@ -29,6 +29,15 @@
 	left: 0;
 	right: 0;
 	width: 100%;
+	z-index: 2;
+
+	@include media('>phone') {
+		right: auto;
+		top: 50%;
+		transform: translateY(-50%);
+		width: rem-calc(40);
+		height: rem-calc(120);
+	}
 
 	&.visible {
 
@@ -47,6 +56,10 @@
 		position: relative;
 		font-size: rem-calc(15);
 		cursor: pointer;
+
+		@include media('>phone') {
+			display: none;
+		}
 
 		&--text {
 			color: white;
@@ -88,6 +101,11 @@
 		transition: all .3s;
 		padding: 0 rem-calc(15);
 
+		@include media('>phone') {
+			max-height: none;
+			padding: 0;
+		}
+
 		&--item {
 			display: block;
 			width: 100%;
@@ -97,11 +115,30 @@
 			padding-left: rem-calc(40);
 			position: relative;
 			margin: rem-calc(8) 0;
+
+			@include media('>phone') {
+				width: rem-calc(40);
+				border-radius: 0;
+				padding-left: 0;
+				margin: 0;
+				height: rem-calc(40);
+			}
+
+			span {
+
+				@include media('>phone') {
+					display: none;
+				}
+			}
 		}
 
 		.facebook-button {
 			background: #3A579A;
 			margin-top: rem-calc(15);
+
+			@include media('>phone') {
+				margin: 0;
+			}
 
 			&::before {
 				content: '';
@@ -109,10 +146,11 @@
 				height: rem-calc(40);
 				position: absolute;
 				left: 0;
-				top: 0;
+				top: 50%;
+				transform: translateY(-50%);
 				background-position: center center;
 				background-repeat: no-repeat;
-				background-size: 70%;
+				background-size: 50%;
 				background-image: url('../../dist/images/facebook-white.svg');
 			}
 		}
@@ -126,10 +164,11 @@
 				height: rem-calc(40);
 				position: absolute;
 				left: 0;
-				top: 0;
+				top: 50%;
+				transform: translateY(-50%);
 				background-position: center center;
 				background-repeat: no-repeat;
-				background-size: 70%;
+				background-size: 50%;
 				background-image: url('../../dist/images/twitter-white.svg');
 			}
 		}
@@ -138,16 +177,21 @@
 			background: #DD4B39;
 			margin-bottom: rem-calc(15);
 
+			@include media('>phone') {
+				margin: 0;
+			}
+
 			&::before {
 				content: '';
 				width: rem-calc(40);
 				height: rem-calc(40);
 				position: absolute;
 				left: 0;
-				top: 0;
+				top: 50%;
+				transform: translateY(-50%);
 				background-position: center center;
 				background-repeat: no-repeat;
-				background-size: 70%;
+				background-size: 50%;
 				background-image: url('../../dist/images/mail-white.svg');
 			}
 		}
