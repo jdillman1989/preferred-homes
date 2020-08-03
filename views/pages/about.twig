@@ -6,6 +6,7 @@
 	<div id="about" class="page page--about">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 		{% include 'shared/content-image.twig' with {
 			title: post.get_field('intro_title'),

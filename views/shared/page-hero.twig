@@ -1,7 +1,7 @@
 <section class="page-hero" style="
 	background-image: url(
-		{% if post.get_field('hero_background') %}
-			{{ post.get_field('hero_background').url }}
+		{% if image %}
+			{{ image }}
 		{% else %}
 			{{ theme.link ~ '/dist/images/default.jpg' }}
 		{% endif %}
@@ -10,7 +10,7 @@
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
-" title="{{ post.get_field('hero_background').alt }}">
+">
 	<div class="page-hero__wrapper">
 		<h1>{{ title }}</h1>
 	</div>

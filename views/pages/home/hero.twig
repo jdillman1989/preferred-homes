@@ -12,12 +12,12 @@
 	background-attachment: fixed;
 " title="{{ post.get_field('hero_background').alt }}">
 	<div class="hero__wrapper">
-		<h1>Preferred Homes</h1>
+		<h1>{{ post.title }}</h1>
 		<div class="hero__typography">
 			<p>Specializing in</p>
 			<p class="hero__typography--banner"><span>Quality Affordable Homes</span></p>
 			<p>Family Owned and Operated Since 1977</p>
 		</div>
-		<a href="/" class="ph-button">See Our Homes</a>
+		<a href="{{ post.get_field('hero_button').url }}" class="ph-button">{{ post.get_field('hero_button').title }}</a>
 	</div>
 </section>

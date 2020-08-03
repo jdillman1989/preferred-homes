@@ -16,6 +16,7 @@
 
 		@include media('>tablet') {
 			flex-wrap: nowrap;
+			max-width: rem-calc(1100);
 		}
 	}
 
@@ -23,6 +24,11 @@
 		width: 100%;
 		border: 1px solid $color-gray;
 		margin-bottom: rem-calc(10);
+		transition: all .2s;
+
+		&:hover {
+			box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+		}
 
 		@include media('>tablet') {
 			margin: 0 1%;
@@ -33,12 +39,12 @@
 
 			img {
 				width: 100%;
-				height: auto;
-				max-height: rem-calc(150);
+				height: 50vw;
 				object-fit: cover;
 
 				@include media('>phone') {
-					max-height: rem-calc(250);
+					height: 20vw;
+					max-height: rem-calc(320);
 				}
 			}
 		}

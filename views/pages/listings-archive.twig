@@ -6,6 +6,7 @@
 	<div id="listings-archive" class="page page--listings-archive">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 		{% include 'pages/listings-archive/archive.twig' %}
 		{% include 'shared/testimonials.twig' %}

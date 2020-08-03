@@ -6,6 +6,7 @@
 	<div id="contact" class="page page--contact">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 		{% include 'pages/contact/form.twig' %}
 		{% include 'pages/contact/serving.twig' %}

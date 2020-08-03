@@ -17,10 +17,12 @@ $group_args = [
 $fields = [
 	// Hero
 	['tab', 'Hero', ['placement' => 'left']],
-	['image', 'Hero Image', ['return_format' => 'array']],
+	['image', 'Hero Background', ['return_format' => 'array']],
+	['link', 'Hero Button', ['return_format' => 'array']],
 
 	// Intro
 	['tab', 'Intro', ['placement' => 'left']],
+	['wysiwyg', 'Intro Text'],
 	['repeater', 'Intro Links', [
 		'sub_fields' => [
 			['text', 'Link URL'],
@@ -37,7 +39,7 @@ $fields = [
 	['tab', 'Signup', ['placement' => 'left']],
 	['text', 'Signup Title'],
 	['wysiwyg', 'Signup Text'],
-	['wysiwyg', 'Signup Form'],
+	['text', 'Signup Form Code'],
 ];
 
 $field_group = core_register_field_group('home', $group_args, $fields);

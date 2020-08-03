@@ -7,6 +7,10 @@
 					<a href="{{ post.link }}" class="archive-grid__card--img">
 						<img src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
 					</a>
+				{% else %}
+					<a href="{{ post.link }}" class="archive-grid__card--img">
+						<img src="{{ theme.link ~ '/dist/images/default.jpg' }}" alt="{{ post.title }}">
+					</a>
 				{% endif %}
 				<div class="archive-grid__card--content">
 					<h3><a href="{{ post.link }}">{{ post.title }}</a></h3>

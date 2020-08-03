@@ -5,7 +5,7 @@
 			{{ post.get_field('signup_text') }}
 		</div>
 		<div class="signup__form">
-			{{ post.get_field('signup_form') }}
+			{{ function('do_shortcode', post.get_field('signup_form')) }}
 		</div>
 	</div>
 </section>

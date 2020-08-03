@@ -4,7 +4,7 @@
 			{{ post.get_field('form_intro') }}
 		</div>
 		<div class="tradein-form__form">
-			{{ post.get_field('form_code') }}
+			{{ function('do_shortcode', post.get_field('form_code')) }}
 		</div>
     </div>
 </section>

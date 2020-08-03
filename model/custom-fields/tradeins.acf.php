@@ -24,7 +24,7 @@ $fields = [
 	// Form
 	['tab', 'Form', ['placement' => 'left']],
 	['wysiwyg', 'Form Intro'],
-	['wysiwyg', 'Form Code'],
+	['text', 'Form Code'],
 ];
 
 $fields = array_merge($fields, $page_builder);

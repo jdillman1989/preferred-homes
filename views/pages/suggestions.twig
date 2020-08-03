@@ -6,6 +6,7 @@
 	<div id="suggestions" class="page page--suggestions">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 		{% include 'pages/suggestions/form.twig' %}
 	</div>

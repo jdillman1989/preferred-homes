@@ -6,6 +6,7 @@
 	<div id="default" class="page page--default">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 		<section class="default-content">
 			<div class="default-content__wrapper">

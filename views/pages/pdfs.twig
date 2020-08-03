@@ -6,6 +6,7 @@
 	<div id="pdfs" class="page page--pdfs">
 		{% include 'shared/page-hero.twig' with {
 			title: post.title,
+			image: post.thumbnail.src
 		}%}
 
 		<section class="pdf-intro">
