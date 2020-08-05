@@ -1,8 +1,8 @@
 <header class="site-header">
 	<nav class="top-nav">
 		<div class="top-nav__wrapper">
-			<a href="tel:6165343400" class="top-nav__link--phone">616.534.3400</a>
-			<a href="mailTo:info@preferredhomesmi.com" class="top-nav__link--email">info@PreferredHomesMi.com</a>
+			<a href="tel:{{ options.phone }}" class="top-nav__link--phone">{{ options.phone }}</a>
+			<a href="mailto:{{ options.email }}" class="top-nav__link--email">{{ options.email }}</a>
 		</div>
 	</nav>
 	<nav class="main-nav" id="mainNav">
@@ -13,28 +13,26 @@
 				</a>
 			</div>
 			<ul class="main-nav__list" id="mainNavList">
-				<li>
-					<span class="main-nav__list--item has-submenu">
-						Our Homes
-						<ul class="main-nav__list--item--submenu">
-							<li>
-								<a href="/">Available Floor Plans</a>
-							</li>
-							<li>
-								<a href="/">Displayed Singlewides</a>
-							</li>
-							<li>
-								<a href="/">Displayed Doublewides</a>
-							</li>
-						</ul>
-					</span>
-				</li>
-				<li>
-					<a href="/" class="main-nav__list--item">About</a>
-				</li>
-				<li>
-					<a href="/" class="main-nav__list--item">Financing</a>
-				</li>
+
+				{% for link in primary_menu %}
+					<li>
+						{% if link.sub %}
+						<span class="main-nav__list--item has-submenu">
+							{{ link.title }}
+							<ul class="main-nav__list--item--submenu">
+								{% for sublink in link.sub %}
+									<li>
+										<a href="{{ sublink.url }}">{{ sublink.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</span>
+						{% else %}
+						<a href="{{ link.url }}" class="main-nav__list--item">{{ link.title }}</a>
+						{% endif %}
+					</li>
+				{% endfor %}
+				
 			</ul>
 			<div class="mobile-nav" id="mobileNav"><span></span></div>
 		</div>

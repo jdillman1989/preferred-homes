@@ -13,6 +13,8 @@ add_theme_support( 'post-thumbnails' );
  *	Enable support for menus
  */
 add_theme_support( 'menus' );
+register_nav_menu('primary', 'Primary');
+register_nav_menu('social', 'Social');
 
 /**
  *  Enable RSS Support

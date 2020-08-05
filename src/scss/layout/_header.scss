@@ -206,7 +206,10 @@
 
 				&:hover {
 					.main-nav__list--item--submenu {
-						max-height: rem-calc(350);
+
+						@include media('>tablet') {
+							max-height: rem-calc(350);
+						}
 					}
 				}
 			}

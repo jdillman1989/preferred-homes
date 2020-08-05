@@ -7,6 +7,11 @@ $group_args = [
 ];
 
 $fields = [
+	// Top
+	['tab', 'Top', ['placement' => 'left']],
+	['text', 'Phone'],
+	['text', 'Email'],
+
 	// Testimonials
 	['tab', 'Testimonials', ['placement' => 'left']],
 	['image', 'Testimonials Background ', ['return_format' => 'array']],
@@ -20,6 +25,12 @@ $fields = [
 		'layout' => 'block',
 		'button_label' => 'Add Testimonial'
 	]],
+
+	// Footer
+	['tab', 'Footer', ['placement' => 'left']],
+	['link', 'Privacy Policy', ['return_format' => 'array']],
+	['text', 'Footer Text'],
+	['text', 'BBB Link'],
 ];
 
 $field_group = core_register_field_group('global-sections', $group_args, $fields);
