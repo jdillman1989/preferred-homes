@@ -4,4 +4,4 @@ $context = Timber::context();
 
 $timber_post = new Timber\Post();
 $context['post'] = $timber_post;
-Timber::render( 'pages/default.twig', $context );
+Timber::render( 'pages/content-area.twig', $context );

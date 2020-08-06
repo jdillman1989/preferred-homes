@@ -30,11 +30,6 @@ if (!defined('TPL_PATH')) define('TPL_PATH', get_template_directory());
 if (!defined('TPL_URL')) define('TPL_URL', get_template_directory_uri());
 
 /**
- *	Clean up WordPress autoloaded scripts and styles.
- */
-require_once 'library/cleanup.php';
-
-/**
  *	Method for rendering complied assets with hash to ensure
  *	users download latest versions
  */
@@ -51,11 +46,6 @@ require_once 'library/theme-support.php';
 require_once 'library/theme-utils.php';
 
 /**
- * Enqueue Scripts and Styles
- */
-require_once 'library/enqueue-scripts.php';
-
-/**
  *  Advanced Custom Fields Related
  */
 require_once 'library/advanced-custom-fields.php';
@@ -69,3 +59,13 @@ require_once 'library/context.php';
  *	Declare and build out content types and ACF fields
  */
 require_once 'model/model-init.php';
+
+// Defines
+define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
+define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
+
+// Classes
+require_once 'classes/class-fl-child-theme.php';
+
+// Actions
+add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
