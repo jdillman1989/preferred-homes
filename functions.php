@@ -29,6 +29,10 @@ if ( ! class_exists( 'Timber' ) ) {
 if (!defined('TPL_PATH')) define('TPL_PATH', get_template_directory());
 if (!defined('TPL_URL')) define('TPL_URL', get_template_directory_uri());
 
+// Defines
+define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
+define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
+
 /**
  *	Method for rendering complied assets with hash to ensure
  *	users download latest versions
@@ -59,10 +63,6 @@ require_once 'library/context.php';
  *	Declare and build out content types and ACF fields
  */
 require_once 'model/model-init.php';
-
-// Defines
-define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
-define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 
 // Classes
 require_once 'classes/class-fl-child-theme.php';
