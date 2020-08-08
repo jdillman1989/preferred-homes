@@ -69,3 +69,67 @@ require_once 'classes/class-fl-child-theme.php';
 
 // Actions
 add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
+
+function bb_dequeue_script() {
+	if (get_post_type() == 'post'){
+		return;
+	}
+
+	if (get_post_type() == 'listing'){
+		return;
+	}
+
+	if (basename(get_page_template()) == 'page.php'){
+		if (!is_front_page()){
+			return;
+		}
+	}
+
+	wp_dequeue_script( 'sticky_script' );
+	wp_dequeue_script( 'jquery-throttle' );
+	wp_dequeue_script( 'jquery-magnificpopup' );
+	wp_dequeue_script( 'jquery-fitvids' );
+	wp_dequeue_script( 'fl-automator' );
+}
+add_action( 'wp_print_scripts', 'bb_dequeue_script', 1000 );
+
+function bb_dequeue_style() {
+	if (get_post_type() == 'post'){
+		return;
+	}
+
+	if (get_post_type() == 'listing'){
+		return;
+	}
+
+	if (basename(get_page_template()) == 'page.php'){
+		if (!is_front_page()){
+			return;
+		}
+	}
+
+	wp_dequeue_style('wp-block-library');
+	wp_deregister_style('wp-block-library');
+
+	wp_dequeue_style('wp-block-library-theme');
+	wp_deregister_style('wp-block-library-theme');
+
+	wp_dequeue_style('sticky_style');
+	wp_deregister_style('sticky_style');
+
+	wp_dequeue_style('jquery-magnificpopup');
+	wp_deregister_style('jquery-magnificpopup');
+
+	wp_dequeue_style('base');
+	wp_deregister_style('base');
+
+	wp_dequeue_style('fl-automator-skin');
+	wp_deregister_style('fl-automator-skin');
+
+	wp_dequeue_style('fl-child-theme');
+	wp_deregister_style('fl-child-theme');
+
+	wp_dequeue_style('pp-animate');
+	wp_deregister_style('pp-animate');
+}
+add_action('wp_enqueue_scripts', 'bb_dequeue_style', 1000);

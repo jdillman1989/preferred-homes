@@ -18,8 +18,8 @@
     "translate": "gulp translate",
     "lint": "eslint 'src/js/**' & stylelint '**/*.scss'; exit 0",
     "eslint": "eslint 'src/js/**'; exit 0",
-	"stylelint": "stylelint '**/*.scss'; exit 0",
-	"startnew": "./startnew.sh"
+    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "startnew": "./startnew.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

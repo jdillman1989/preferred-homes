@@ -1,7 +1,18 @@
-<?php
+<?php get_header('parent'); ?>
 
-$context = Timber::context();
+<div class="fl-content-full container">
+	<div class="row">
+		<div class="fl-content col-md-12">
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'content', 'page' );
+				endwhile;
+			endif;
+			?>
+		</div>
+	</div>
+</div>
 
-$timber_post = new Timber\Post();
-$context['post'] = $timber_post;
-Timber::render( 'pages/content-area.twig', $context );
+<?php get_footer('parent'); ?>

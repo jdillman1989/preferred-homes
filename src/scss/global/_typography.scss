@@ -9,71 +9,74 @@ $font-large: 34;
 $font-medium: 29;
 $font-small: 20;
 
-h1,
-.h-one,
-h2,
-.h-two,
-h3,
-.h-three {
-	font-family: $heading-copy;
-	font-weight: 700;
-	letter-spacing: rem-calc(2);
-}
-
-h1,
-.h-one {
-	font-size: rem-calc($font-large);
-	color: white;
-	text-transform: uppercase;
-	line-height: 1;
-
-	@include media('>phone') {
-		font-size: rem-calc($font-xlarge);
+body {
+	
+	h1,
+	.h-one,
+	h2,
+	.h-two,
+	h3,
+	.h-three {
+		font-family: $heading-copy;
+		font-weight: 700;
+		letter-spacing: rem-calc(2);
 	}
-}
 
-h2,
-.h-two {
-	font-size: rem-calc($font-medium);
-	color: $color-copy;
-	margin-bottom: rem-calc(20);
-	line-height: 1.1;
-
-	@include media('>phone') {
+	h1,
+	.h-one {
 		font-size: rem-calc($font-large);
-		margin-bottom: rem-calc(30);
+		color: white;
+		text-transform: uppercase;
+		line-height: 1;
+
+		@include media('>phone') {
+			font-size: rem-calc($font-xlarge);
+		}
 	}
-}
 
-h3,
-.h-three {
-	font-size: rem-calc($font-small);
-	color: $color-copy;
-	margin-bottom: rem-calc( $font-small );
-}
+	h2,
+	.h-two {
+		font-size: rem-calc($font-medium);
+		color: $color-copy;
+		margin-bottom: rem-calc(20);
+		line-height: 1.1;
 
-a {
-	color: inherit;
-}
+		@include media('>phone') {
+			font-size: rem-calc($font-large);
+			margin-bottom: rem-calc(30);
+		}
+	}
 
-p {
-	margin-bottom: rem-calc(16);
+	h3,
+	.h-three {
+		font-size: rem-calc($font-small);
+		color: $color-copy;
+		margin-bottom: rem-calc( $font-small );
+	}
 
-	> a {
+	a {
+		color: inherit;
+	}
+
+	p {
+		margin-bottom: rem-calc(16);
+
+		> a {
+			color: $color-secondary;
+			text-decoration: none;
+		}
+	}
+
+	strong {
+		font-weight: 700;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	.main ul > li > a {
 		color: $color-secondary;
 		text-decoration: none;
 	}
-}
-
-strong {
-	font-weight: 700;
-}
-
-em {
-	font-style: italic;
-}
-
-.main ul > li > a {
-	color: $color-secondary;
-	text-decoration: none;
 }

@@ -1,7 +1,24 @@
-<?php
+<?php get_header('parent'); ?>
 
-$context = Timber::context();
+<div class="container">
+	<div class="row">
 
-$timber_post = new Timber\Post();
-$context['post'] = $timber_post;
-Timber::render( 'pages/content-area.twig', $context );
+		<?php FLTheme::sidebar( 'left' ); ?>
+
+		<div class="fl-content <?php FLTheme::content_class(); ?>">
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'content', 'single' );
+				endwhile;
+			endif;
+			?>
+		</div>
+
+		<?php FLTheme::sidebar( 'right' ); ?>
+
+	</div>
+</div>
+
+<?php get_footer('parent'); ?>

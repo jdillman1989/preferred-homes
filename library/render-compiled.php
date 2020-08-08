@@ -5,8 +5,8 @@
 function render_style($name, $path) {
     if (preg_match('/^(\/\/|http)/', $path)) {
         wp_enqueue_style($name, $path);
-    } else if (file_exists(get_template_directory() . $path)) {
-        $path = get_template_directory_uri() . $path;
+    } else if (file_exists(FL_CHILD_THEME_DIR. $path)) {
+		$path = '/wp-content/themes/preferred-homes'.$path;
 
         wp_enqueue_style($name, $path, array(), null);
     } else {
@@ -20,8 +20,8 @@ function render_style($name, $path) {
 function render_script($name, $path) {
     if (preg_match('/^(\/\/|http)/', $path)) {
         wp_enqueue_script($name, $path);
-    } else if (file_exists(get_template_directory() . $path)) {
-        $path = get_template_directory_uri() . $path;
+    } else if (file_exists(FL_CHILD_THEME_DIR. $path)) {
+        $path = '/wp-content/themes/preferred-homes'.$path;
 
         wp_enqueue_script($name, $path, array(), null);
     } else {
