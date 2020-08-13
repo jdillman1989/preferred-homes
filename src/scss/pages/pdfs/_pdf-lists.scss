@@ -33,13 +33,13 @@
 		&--item {
 			margin: rem-calc(15) 3%;
 			max-width: rem-calc(270);
+		}
 
-			a {
-				max-width: rem-calc(250);
-				display: block;
-				margin: 0 auto;
-				margin-bottom: rem-calc(15);
-			}
+		&--link {
+			max-width: rem-calc(250);
+			display: block;
+			margin: 0 auto;
+			margin-bottom: rem-calc(15);
 		}
 	}
 }

@@ -10,7 +10,7 @@
 
 					{% for pdf in list.pdfs %}
 						<div class="pdf-lists__list--item">
-							<a href="{{ pdf.pdf_url }}">
+							<a class="pdf-lists__list--link" href="{{ pdf.pdf_url }}">
 								<img src="{{ pdf.pdf_preview_image.url }}" alt="{{ pdf.pdf_preview_image.alt }}">
 							</a>
 							{{ pdf.pdf_description }}
