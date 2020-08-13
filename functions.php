@@ -71,9 +71,6 @@ require_once 'classes/class-fl-child-theme.php';
 add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
 function bb_dequeue_script() {
-	if (get_post_type() == 'post'){
-		return;
-	}
 
 	if (get_post_type() == 'listing'){
 		return;
@@ -94,9 +91,6 @@ function bb_dequeue_script() {
 add_action( 'wp_print_scripts', 'bb_dequeue_script', 1000 );
 
 function bb_dequeue_style() {
-	if (get_post_type() == 'post'){
-		return;
-	}
 
 	if (get_post_type() == 'listing'){
 		return;
