@@ -1,0 +1,66 @@
+<section id="archive" class="archive">
+	<div class="archive__wrapper">
+		<div class="archive__filters">
+
+			<div class="archive__filters--taxonomies">
+
+				<div class="archive__filters--taxonomies-filter filter-label">
+					<div class="taxonomy-wrapper">
+						<span>Filter By:</span>
+					</div>
+				</div>
+
+				{% for taxonomy in taxonomies %}
+					<button class="archive__filters--taxonomies-filter filter-button {{ taxonomy.hidden_class }}">
+						<div class="taxonomy-wrapper">
+							<p class="filter-button__text">
+								{{ taxonomy.label }}:
+								<span id="{{ taxonomy.slug }}-current">
+									{% if taxonomy.slug == tax_query %}
+										{{ term_label }}
+									{% else %}
+										(ALL)
+									{% endif %}
+								</span>
+							</p>
+						</div>
+						<ul class="archive__filters--terms {{ taxonomy.slug }}-terms-list">
+							<li class="term-item" data-tax="{{ taxonomy.slug }}" data-term="all">All</li>
+
+							{% for term in taxonomy.terms %}
+								<li class="term-item" data-tax="{{ taxonomy.slug }}" data-term="{{ term.slug }}">{{ term.label }}</li>
+							{% endfor %}
+
+						</ul>
+					</button>
+				{% endfor %}
+
+			</div>
+		</div>
+		<div class="archive__posts">
+			<div class="archive__posts__wrapper">
+
+				{% for post in posts %}
+					<article class="archive-posts__card">
+						{% if post.thumbnail.src %}
+							<a href="{{ post.link }}" class="archive-grid__card--img" data-url>
+								<img src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+							</a>
+						{% else %}
+							<a href="{{ post.link }}" class="archive-grid__card--img" data-url>
+								<img src="{{ theme.link ~ '/dist/images/default.jpg' }}" alt="{{ post.title }}" data-img>
+							</a>
+						{% endif %}
+						<div class="archive-grid__card--content">
+							<h3><a href="{{ post.link }}" data-url data-title>{{ post.title }}</a></h3>
+						</div>
+					</article>
+				{% endfor %}
+
+			</div>
+			<div class="archive__posts--button">
+				{{ next_button }}
+			</div>
+		</div>
+	</div>
+</section>

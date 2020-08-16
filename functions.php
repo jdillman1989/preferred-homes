@@ -52,6 +52,7 @@ require_once 'library/theme-utils.php';
 /**
  *  Advanced Custom Fields Related
  */
+
 require_once 'library/advanced-custom-fields.php';
 
 /**
@@ -70,16 +71,29 @@ require_once 'classes/class-fl-child-theme.php';
 // Actions
 add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
-function bb_dequeue_script() {
+function is_bb_needed() {
+
+	if (is_archive()) {
+		return false;
+	}
 
 	if (get_post_type() == 'listing'){
-		return;
+		return true;
 	}
 
 	if (basename(get_page_template()) == 'page.php'){
 		if (!is_front_page()){
-			return;
+			return true;
 		}
+	}
+
+	return false;
+}
+
+function bb_dequeue_script() {
+
+	if (is_bb_needed()){
+		return;
 	}
 
 	wp_dequeue_script( 'sticky_script' );
@@ -92,14 +106,8 @@ add_action( 'wp_print_scripts', 'bb_dequeue_script', 1000 );
 
 function bb_dequeue_style() {
 
-	if (get_post_type() == 'listing'){
+	if (is_bb_needed()){
 		return;
-	}
-
-	if (basename(get_page_template()) == 'page.php'){
-		if (!is_front_page()){
-			return;
-		}
 	}
 
 	wp_dequeue_style('wp-block-library');

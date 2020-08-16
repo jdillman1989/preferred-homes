@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+
+{% set template = 'catalog' %}
+
+{% block content %}
+	<div id="catalog" class="page page--catalog">
+		{% include 'shared/page-hero.twig' with {
+			title: title
+		}%}
+		{% include 'pages/catalog/archive.twig' %}
+	</div>
+{% endblock %}

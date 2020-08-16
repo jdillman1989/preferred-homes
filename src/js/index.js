@@ -7,6 +7,7 @@ import Accordion from './shared/Accordion';
 import Home from './pages/Home';
 import Default from './pages/Default';
 import MobileLanding from './pages/MobileLanding';
+import Catalog from './pages/Catalog';
 
 class App {
 	constructor() {
@@ -28,6 +29,7 @@ class App {
 		this.pages.set( 'home', new Home() );
 		this.pages.set( 'default', new Default() );
 		this.pages.set( 'mobile-landing', new MobileLanding() );
+		this.pages.set( 'catalog', new Catalog() );
 
 		this.page = this.pages.get( this.template ) || this.pages.get( 'not-found' );
 		if ( this.page ) {
