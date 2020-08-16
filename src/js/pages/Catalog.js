@@ -1,43 +1,6 @@
 export default class {
 
 	/**
-	 * setupFilterPosition
-	 *
-	 * Filter bar position fix on scroll
-	 *
-	 * @type function
-	 * @since 0.0.1
-	 *
-	 * @param NA
-	 * @return NA
-	 */
-	setupFilterPosition() {
-
-		const filterBar = document.querySelector( '.archive__filters' );
-		let headerHeight = document.querySelector( '.header__wrapper' ).offsetHeight;
-		let origin = 0;
-		let initialTop = filterBar.style.top;
-
-		window.addEventListener( 'scroll', () => {
-			if ( filterBar.getBoundingClientRect().top <= headerHeight && ! origin ) {
-				filterBar.classList.add( 'fixed' );
-				filterBar.style.top = headerHeight + 'px';
-				origin = document.documentElement.scrollTop + headerHeight;
-			} else if ( origin && document.documentElement.scrollTop + headerHeight <= origin ) {
-				filterBar.classList.remove( 'fixed' );
-				filterBar.style.top = initialTop;
-				origin = 0;
-			}
-		});
-
-		window.addEventListener( 'resize', () => {
-			headerHeight = document.querySelector( '.header__wrapper' ).offsetHeight;
-			origin = 0;
-			initialTop = filterBar.style.top;
-		});
-	}
-
-	/**
 	 * setupDropdowns
 	 *
 	 * Display term lists on filter button click
@@ -139,7 +102,7 @@ export default class {
 
 		const nextButton = document.getElementById( 'morePosts' );
 		const postsSection = document.querySelector( '.archive__posts' );
-		const postsWrapper = document.querySelector( '.archive__posts__wrapper' );
+		const postsWrapper = document.querySelector( '.archive__posts--wrapper' );
 
 		postsSection.classList.add( 'faded' );
 
@@ -215,6 +178,9 @@ export default class {
 
 		postData.forEach( post => {
 			const template = getTemplate.cloneNode( true );
+			if ( 'A' == template.tagName ) {
+				template.href = post.url;
+			}
 
 			const title = template.querySelector( '[data-title]' );
 			const links = template.querySelectorAll( '[data-url]' );

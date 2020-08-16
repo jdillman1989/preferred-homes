@@ -197,7 +197,7 @@ function archive_page_template($context, $type = 'listing', $is_archive = false)
 	}
 
 	// Post List
-	$ppp = 1;
+	$ppp = 8;
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$posts_args = [
 		'post_type' => $type,

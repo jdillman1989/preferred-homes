@@ -18,27 +18,7 @@
 
 		&--taxonomies {
 			@extend %container;
-
 			display: flex;
-	
-			@include media('>phone') {
-				width: 80%;
-				padding: 0;
-			}
-	
-			@include media('>tablet') {
-				flex-wrap: nowrap;
-				max-width: rem-calc(1100);
-			}
-
-			&-filter {
-				font-size: rem-calc(12);
-				position: relative;
-
-				@include media('>tablet') {
-					font-size: rem-calc(16);
-				}
-			}
 		}
 
 		&--terms {
@@ -54,17 +34,47 @@
 			z-index: 2;
 
 			li {
-				padding: rem-calc(5);
+				padding: rem-calc(10) rem-calc(8);
 				text-align: left;
+				color: $color-copy;
 
 				&:hover {
 					background: $color-gray;
 				}
-
-				@include media('>phone') {
-					padding: rem-calc(5) rem-calc(10);
-				}
 			}
+		}
+	}
+
+	.filter-label {
+		margin-right: rem-calc(10);
+		margin-bottom: 0;
+		padding: rem-calc(10) 0;
+	}
+
+	.filter-button {
+		position: relative;
+		margin-right: rem-calc(10);
+		padding-right: rem-calc(40);
+
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			border-left: 2px solid white;
+			border-bottom: 2px solid white;
+			width: rem-calc(7);
+			height: rem-calc(7);
+			transform: rotate(-45deg) translateY(-65%);
+			top: 50%;
+			right: rem-calc(10);
+		}
+
+		&.displayed .archive__filters--terms {
+			max-height: rem-calc(400);
+		}
+
+		span {
+			pointer-events: none;
 		}
 	}
 
@@ -73,55 +83,15 @@
 		display: flex;
 		justify-content: center;
 		text-align: center;
-		border: 1px solid $color-gray;
 		padding: rem-calc(15) 0;
 		width: 100%;
 	}
 
-	.filter-label {
-		width: rem-calc(60);
-		display: flex;
-
-		@include media('>phone') {
-			width: rem-calc(200);
-		}
-	}
-
-	.filter-button {
-		display: block;
-
-		&.displayed .archive__filters--terms {
-			max-height: rem-calc(200);
-
-			@include media('>phone') {
-				max-height: rem-calc(300);
-			}
-		}
-
-		&__text {
-			position: relative;
-			padding-right: rem-calc(10);
-			display: inline-block;
-
-			span {
-				display: none;
-
-				@include media('>phone') {
-					display: inline-block;
-				}
-			}
-		}
-	}
-
 	&__posts {
+		@extend %container;
+
 		transition: all .5s;
 		opacity: 1;
-
-		@include media('>tablet') {
-			max-width: rem-calc(1920);
-			margin: 0 auto;
-			width: 95%;
-		}
 
 		&.faded {
 			opacity: 0.5;
@@ -170,7 +140,7 @@
 			object-fit: cover;
 
 			@include media('>phone') {
-				height: 20vw;
+				height: 18vw;
 				max-height: rem-calc(320);
 			}
 		}
