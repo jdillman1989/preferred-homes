@@ -4,6 +4,12 @@
 
 {% block content %}
 	<div id="listing" class="page page--listing">
-		{% include 'pages/listing/hero.twig' %}
+		{% include 'shared/page-hero.twig' with {
+			title: post.title,
+			image: post.thumbnail.src
+		}%}
+
+		{% include 'pages/listing/display.twig' %}
+		{% include 'pages/listing/sidebar.twig' %}
 	</div>
 {% endblock %}

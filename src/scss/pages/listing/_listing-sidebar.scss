@@ -1,0 +1,66 @@
+.page--listing .listing-sidebar {
+
+	&__wrapper {
+		
+	}
+
+	&__content {
+
+		h3 {
+			font-size: rem-calc(24);
+		}
+
+		&--blocks {
+
+		}
+
+		&--block {
+
+			h4 {
+
+			}
+		}
+
+		&--tabs {
+
+		}
+
+		&--tab {
+			display: inline-block;
+			padding: rem-calc(15) rem-calc(18);
+
+			&:hover {
+				background: $color-gray;
+			}
+
+			&.selected {
+				background: $color-gray;
+			}
+		}
+
+		&--tab-content {
+			border: 1px solid $color-gray;
+			padding: rem-calc(30);
+			display: none;
+
+			&.selected {
+				display: block;
+			}
+		}
+	}
+
+	&__price {
+		font-size: rem-calc(18);
+		color: $color-primary;
+	}
+
+	&__aside {
+
+		&__wrapper {
+
+			form {
+				box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+<section id="listing-display" class="listing-display">
+	<div class="listing-display__wrapper">
+
+
+		<div class="listing-display__gallery">
+			<div class="listing-display__slider">
+				<div class="listing-display__slider--items swiper-wrapper">
+		
+					{% for photo in post.get_field('gallery') %}
+						<picture class="listing-display__slider--item swiper-slide" data-index="{{ loop.index }}">
+							<img src="{{ photo.url }}" alt="{{ photo.alt }}">
+						</picture>
+					{% endfor %}
+		
+				</div>
+				<div class="listing-display__slider--nav">
+					<div class="listing-display__slider--buttons">
+						<button class="listing-display__slider--buttons--previous"><span></span></button>
+						<button class="listing-display__slider--buttons--next"><span></span></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="swiper-container listing-display__thumbs">
+				<div class="swiper-wrapper listing-display__thumbs--items">
+
+					{% for photo in post.get_field('gallery') %}
+						<picture class="listing-display__thumbs--item swiper-slide" data-index="{{ loop.index }}">
+							<img src="{{ photo.url }}" alt="{{ photo.alt }}">
+						</picture>
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="listing-display__info">
+			<div class="listing-display__info__tags">
+				{% if post.get_field('displayed_on_lot') == 'yes' %}
+					<span class="listing-display__info__tags--displayed">
+						Displayed On Lot
+					</span>
+				{% endif %}
+
+				{% if post.get_field('new_or_used_home') == 'new' %}
+					<span class="listing-display__info__tags--new">
+						New Home
+					</span>
+				{% endif %}
+			</div>
+
+			<div class="listing-display__info__text">
+				<h2>{{ post.title }}</h2>
+
+				{% if post.get_field('as_displayed_price') %}
+					<span class="listing-display__info__price">{{ post.get_field('as_displayed_price') }}</span>
+				{% endif %}
+
+				{{ post.get_field('description') }}
+
+				<div class="listing-display__info__specs">
+
+					{% if post.get_field('beds') %}
+						<span class="listing-display__info__spec beds">{{ post.get_field('beds') }}</span>
+					{% endif %}
+
+					{% if post.get_field('bathrooms') %}
+						<span class="listing-display__info__spec bathrooms">{{ post.get_field('bathrooms') }}</span>
+					{% endif %}
+
+					{% if post.get_field('sqft') %}
+						<span class="listing-display__info__spec sqft">{{ post.get_field('sqft') }}</span>
+					{% endif %}
+
+					{% if post.get_field('size') %}
+						<span class="listing-display__info__spec size">{{ post.get_field('size') }}</span>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+
+
+    </div>
+</section>

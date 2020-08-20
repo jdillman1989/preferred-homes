@@ -77,8 +77,8 @@ function is_bb_needed() {
 		return false;
 	}
 
-	if (get_post_type() == 'listing'){
-		return true;
+	if (is_single()){
+		return false;
 	}
 
 	if (basename(get_page_template()) == 'page.php'){

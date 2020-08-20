@@ -1,0 +1,73 @@
+<section id="listing-sidebar" class="listing-sidebar">
+	<div class="listing-sidebar__wrapper">
+
+		<div class="listing-sidebar__content">
+			<h3>Pricing</h3>
+
+			{% if post.get_field('base_wallboard_price') %}
+				<p>Base Wallboard Price</p>
+				<span class="listing-sidebar__price">{{ post.get_field('base_wallboard_price') }}</span>
+			{% endif %}
+
+			{% if post.get_field('base_drywall_price') %}
+				<p>Base Drywall Price</p>
+				<span class="listing-sidebar__price">{{ post.get_field('base_drywall_price') }}</span>
+			{% endif %}
+
+			{% if post.get_field('base_modular_price') %}
+				<p>Base Modular Price</p>
+				<span class="listing-sidebar__price">{{ post.get_field('base_modular_price') }}</span>
+			{% endif %}
+
+			<h3>Additional Information</h3>
+
+			<div class="listing-sidebar__content--blocks">
+
+				{% if post.get_field('manufacturer') %}
+					<div class="listing-sidebar__content--block">
+						<h4>Manufacturer</h4>
+						<p>{{ post.get_field('manufacturer') }}</p>
+					</div>
+				{% endif %}
+
+				{% if post.get_field('model') %}
+					<div class="listing-sidebar__content--block">
+						<h4>Model</h4>
+						<p>{{ post.get_field('model') }}</p>
+					</div>
+				{% endif %}
+
+				{% if post.get_field('inventory_number') %}
+					<div class="listing-sidebar__content--block">
+						<h4>Inventory #</h4>
+						<p>{{ post.get_field('inventory_number') }}</p>
+					</div>
+				{% endif %}
+
+			</div>
+
+			<h3>Standard Features</h3>
+
+			<div class="listing-sidebar__content--tabs">
+				{% for tab in post.get_field('description_tabs') %}
+					<button class="listing-sidebar__content--tab" data-tab="{{ loop.index }}">{{ tab.tab_text }}</button>
+				{% endfor %}
+			</div>
+
+			{% for content in post.get_field('description_tabs') %}
+				<div class="listing-sidebar__content--tab-content" data-tabcontent="{{ loop.index }}">
+					{{ content.tab_content }}
+				</div>
+			{% endfor %}
+		</div>
+
+
+
+		<aside class="listing-sidebar__aside">
+			<div class="listing-sidebar__aside__wrapper">
+				{{ function('do_shortcode', post.get_field('form_code')) }}
+			</div>
+		</aside>
+
+	</div>
+</section>

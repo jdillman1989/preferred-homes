@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Default from './pages/Default';
 import MobileLanding from './pages/MobileLanding';
 import Catalog from './pages/Catalog';
+import Listing from './pages/Listing';
 
 class App {
 	constructor() {
@@ -30,6 +31,7 @@ class App {
 		this.pages.set( 'default', new Default() );
 		this.pages.set( 'mobile-landing', new MobileLanding() );
 		this.pages.set( 'catalog', new Catalog() );
+		this.pages.set( 'listing', new Listing() );
 
 		this.page = this.pages.get( this.template ) || this.pages.get( 'not-found' );
 		if ( this.page ) {

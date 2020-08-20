@@ -33,6 +33,7 @@ $fields = [
 		],
 		'return_format' => 'value',
 	]],
+	['text', 'Form Code'],
 
 	// Specs
 	['tab', 'Specs', ['placement' => 'left']],
@@ -58,6 +59,20 @@ $fields = [
 		'max' => 24,
 		'preview_size' => 'thumbnail',
 		'library' => 'all',
+	]],
+
+	// Descriptions
+	['tab', 'Descriptions', ['placement' => 'left']],
+	['wysiwyg', 'Description'],
+	['repeater', 'Description Tabs', [
+		'sub_fields' => [
+			['text', 'Tab Text'],
+			['wysiwyg', 'Tab Content'],
+		],
+		'min' => 0,
+		'max' => 10,
+		'layout' => 'block',
+		'button_label' => 'Add Description Tab'
 	]],
 
 	// Pricing
