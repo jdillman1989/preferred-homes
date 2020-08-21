@@ -1,17 +1,30 @@
 .page--listing .listing-display {
 
 	&__wrapper {
-		padding: rem-calc(30) rem-calc(15);
+		@extend %container;
+
+		padding-top: rem-calc(30);
+		padding-bottom: rem-calc(30);
+
+		@include media('>phone') {
+			display: flex;
+			justify-content: space-between;
+			max-width: rem-calc(1500);
+		}
 	}
 
 	&__gallery {
 		margin-bottom: rem-calc(30);
+
+		@include media('>phone') {
+			width: 48%;
+		}
 	}
 
 	&__slider {
 		position: relative;
 		padding-bottom: rem-calc(15);
-
+		overflow: hidden;
 
 		&--items {
 
@@ -25,6 +38,10 @@
 				object-fit: cover;
 				object-position: 50% 50%;
 				max-height: rem-calc(500);
+
+				@include media('>phone') {
+					height: 40vw;
+				}
 			}
 		}
 
@@ -81,6 +98,10 @@
 				object-position: 50% 50%;
 				max-height: rem-calc(100);
 				cursor: pointer;
+
+				@include media('>phone') {
+					height: 6vw;
+				}
 			}
 		}
 	}
@@ -89,6 +110,10 @@
 
 
 	&__info {
+
+		@include media('>phone') {
+			width: 48%;
+		}
 
 		&__tags {
 			display: flex;
@@ -127,6 +152,11 @@
 
 		&__specs {
 
+			@include media('>phone') {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
 		}
 
 		&__spec {
@@ -135,6 +165,10 @@
 			display: block;
 			width: 100%;
 			margin-bottom: rem-calc(30);
+
+			@include media('>phone') {
+				width: 48%;
+			}
 
 			&::before {
 				content: '';

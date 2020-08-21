@@ -1,6 +1,8 @@
 .site-footer {
+	position: relative;
 	background: $color-gray;
 	padding: rem-calc(15) 0;
+	z-index: 2;
 
 	@include media('>phone') {
 		padding: rem-calc(15) 0;

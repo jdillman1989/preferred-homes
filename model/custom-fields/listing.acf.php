@@ -33,6 +33,7 @@ $fields = [
 		],
 		'return_format' => 'value',
 	]],
+	['text', 'Form Title'],
 	['text', 'Form Code'],
 
 	// Specs
