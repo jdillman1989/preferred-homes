@@ -43,6 +43,11 @@
 
 			</div>
 
+			{% if post.get_field('floorplan') %}
+				<h3>Floorplan</h3>
+				<img class="listing-sidebar__floorplan" src="{{ post.get_field('floorplan').url }}" alt="{{ post.get_field('floorplan').alt }}">
+			{% endif %}
+
 			<h3>Standard Features</h3>
 
 			<div class="listing-sidebar__content--tabs">

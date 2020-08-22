@@ -99,9 +99,19 @@ export default class {
 		});
 	}
 
+	setupSelect() {
+		const priceSelect = document.getElementById( 'priceSelect' );
+		const priceDisplay = document.getElementById( 'priceDisplay' );
+
+		priceSelect.addEventListener( 'change', () => {
+			priceDisplay.textContent = priceSelect.value;
+		});
+	}
+
 	create() {
 		this.setupGallery();
 		this.setupSidebar();
 		this.setupTabs();
+		this.setupSelect();
 	}
 }

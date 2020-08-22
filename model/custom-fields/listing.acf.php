@@ -38,14 +38,6 @@ $fields = [
 
 	// Specs
 	['tab', 'Specs', ['placement' => 'left']],
-	['radio', 'Build Type', [
-		'choices' => [
-			'singlewide' => 'Singlewide',
-			'doublewide' => 'Doublewide',
-			'modular' => 'Modular',
-		],
-		'return_format' => 'value',
-	]],
 	['text', 'SqFt'],
 	['text', 'Beds'],
 	['text', 'Bathrooms'],
@@ -81,9 +73,16 @@ $fields = [
 	['text', 'Base Wallboard Price'],
 	['text', 'Base Drywall Price'],
 	['text', 'Base Modular Price'],
-	['text', 'As Displayed Price'],
-	['text', 'Sale Price'],
-	['text', 'Lot Model Clearance Price'],
+	['repeater', 'Displayed Prices', [
+		'sub_fields' => [
+			['text', 'Price Label'],
+			['text', 'Price'],
+		],
+		'min' => 1,
+		'max' => 10,
+		'layout' => 'block',
+		'button_label' => 'Add Price'
+	]]
 ];
 
 $field_group = core_register_field_group('listing', $group_args, $fields);

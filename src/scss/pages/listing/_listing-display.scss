@@ -3,13 +3,14 @@
 	&__wrapper {
 		@extend %container;
 
-		padding-top: rem-calc(30);
+		padding-top: rem-calc(50);
 		padding-bottom: rem-calc(30);
 
 		@include media('>phone') {
 			display: flex;
 			justify-content: space-between;
 			max-width: rem-calc(1500);
+			padding-top: rem-calc(70);
 		}
 	}
 
@@ -140,6 +141,44 @@
 
 			h2 {
 				font-size: rem-calc(30);
+			}
+		}
+
+		&__select {
+			display: flex;
+			align-items: center;
+			margin-bottom: rem-calc(10);
+			max-width: rem-calc(350);
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				border-left: 2px solid $color-copy;
+				border-bottom: 2px solid $color-copy;
+				width: rem-calc(7);
+				height: rem-calc(7);
+				transform: rotate(-45deg);
+				right: rem-calc(10);
+				top: rem-calc(9);
+			}
+
+			span {
+				display: block;
+				margin-right: rem-calc(10);
+			}
+
+			select {
+				margin: 0;
+				width: 100%;
+				appearance: none;
+				background: $color-gray;
+				border: 0;
+				padding: rem-calc(7) rem-calc(10);
+				padding-right: rem-calc(20);
+				border-radius: 0;
+				cursor: pointer;
 			}
 		}
 

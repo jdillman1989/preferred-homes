@@ -83,6 +83,15 @@
 		color: $color-primary;
 	}
 
+	&__floorplan {
+		width: 100%;
+		height: auto;
+		max-height: rem-calc(400);
+		object-fit: contain;
+		object-position: left;
+		margin-bottom: rem-calc(20);
+	}
+
 	&__aside {
 		margin-bottom: rem-calc(30);
 
