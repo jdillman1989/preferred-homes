@@ -62,4 +62,14 @@ export default class {
 			}
 		});
 	}
+
+	setupDefaults() {
+		const blankLinks = document.querySelectorAll( 'a[href="#"]' );
+
+		blankLinks.forEach( link => {
+			link.addEventListener( 'click', ( e ) => {
+				e.preventDefault();
+			});
+		});
+	}
 }

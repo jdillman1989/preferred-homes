@@ -1,11 +1,18 @@
 <section class="page-hero" style="
-	background-image: url(
-		{% if image %}
-			{{ image }}
-		{% else %}
-			{{ theme.link ~ '/dist/images/default.jpg' }}
-		{% endif %}
-	);
+	background-image: 
+		linear-gradient(
+		rgba(0, 0, 0, 0.1), 
+		rgba(0, 0, 0, 0.1)
+		),
+
+		url(
+			{% if image %}
+				{{ image }}
+			{% else %}
+				{{ theme.link ~ '/dist/images/default.jpg' }}
+			{% endif %}
+		)
+	;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;

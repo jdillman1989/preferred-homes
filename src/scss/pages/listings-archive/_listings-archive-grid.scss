@@ -26,9 +26,15 @@
 
 	&__archive {
 
+		::after {
+			content: "";
+			flex: auto;
+		}
+
 		@include media('>phone') {
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: space-between;
 		}
 
 		&--item {
@@ -37,7 +43,8 @@
 
 			@include media('>phone') {
 				margin: 0 rem-calc(10);
-				width: 25%;
+				margin-bottom: rem-calc(40);
+				width: 23%;
 			}
 
 			> a {
@@ -46,6 +53,7 @@
 				width: 100%;
 				height: rem-calc(250);
 				overflow: hidden;
+				margin-bottom: rem-calc(15);
 
 				span {
 					display: block;

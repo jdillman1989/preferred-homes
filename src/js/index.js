@@ -55,6 +55,7 @@ class App {
 		this.menu = new Menu();
 		this.menu.setupMobile();
 		this.menu.setupScroll();
+		this.menu.setupDefaults();
 
 		this.testimonials = new Testimonials();
 		this.testimonials.setupSwiper();

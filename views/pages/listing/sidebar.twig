@@ -2,7 +2,10 @@
 	<div class="listing-sidebar__wrapper">
 
 		<div class="listing-sidebar__content">
-			<h3>Pricing</h3>
+
+			{% if post.get_field('base_wallboard_price') or post.get_field('base_drywall_price') or post.get_field('base_modular_price') %}
+				<h3>Pricing</h3>
+			{% endif %}
 
 			{% if post.get_field('base_wallboard_price') %}
 				<p>Base Wallboard Price <br><span class="listing-sidebar__price">{{ post.get_field('base_wallboard_price') }}</span></p>

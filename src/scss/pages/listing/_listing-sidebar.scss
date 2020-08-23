@@ -26,7 +26,6 @@
 
 			@include media('>phone') {
 				display: flex;
-				justify-content: space-between;
 			}
 		}
 
@@ -38,6 +37,7 @@
 
 			@include media('>phone') {
 				width: 30%;
+				margin-right: rem-calc(15);
 			}
 
 			h4 {
