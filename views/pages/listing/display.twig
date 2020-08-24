@@ -1,6 +1,9 @@
 <section id="listing-display" class="listing-display">
 	<div class="listing-display__wrapper">
 
+		<div class="listing-display__breadcrumbs">
+			<p><a href="/">Home</a> / <a href="{{ term_url }}">{{ term_label }}</a> / {{ post.title }}</p>
+		</div>
 
 		<div class="listing-display__gallery">
 			<div class="listing-display__slider">
@@ -34,8 +37,6 @@
 			</div>
 		</div>
 
-
-
 		<div class="listing-display__info">
 			<div class="listing-display__info__tags">
 				{% if post.get_field('displayed_on_lot') == 'yes' %}
@@ -54,15 +55,21 @@
 			<div class="listing-display__info__text">
 				<h2>{{ post.title }}</h2>
 
-				<span class="listing-display__info__select">
-					<span>Pricing: </span>
-					<select id="priceSelect" class="listing-display__info__select">
-						{% for price in post.get_field('displayed_prices') %}
-							<option value="{{ price.price }}">{{ price.price_label }}</option>
-						{% endfor %}
-					</select>
-				</span>
-				<span id="priceDisplay" class="listing-display__info__price">{{ post.get_field('displayed_prices')[0].price }}</span>
+				{% if post.get_field('price_range') %}
+					<p>{{ post.get_field('price_range') }}</p>
+				{% endif %}
+
+				{% if post.get_field('displayed_prices') %}
+					<span class="listing-display__info__select">
+						<span>Pricing: </span>
+						<select id="priceSelect" class="listing-display__info__select">
+							{% for price in post.get_field('displayed_prices') %}
+								<option value="{{ price.price }}">{{ price.price_label }}</option>
+							{% endfor %}
+						</select>
+					</span>
+					<span id="priceDisplay" class="listing-display__info__price">{{ post.get_field('displayed_prices')[0].price }}</span>
+				{% endif %}
 
 				{{ post.get_field('description') }}
 
@@ -94,8 +101,6 @@
 				</div>
 			</div>
 		</div>
-
-
 
     </div>
 </section>

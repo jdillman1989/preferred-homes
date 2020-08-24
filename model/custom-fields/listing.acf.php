@@ -63,7 +63,7 @@ $fields = [
 			['wysiwyg', 'Tab Content'],
 		],
 		'min' => 0,
-		'max' => 10,
+		'max' => 15,
 		'layout' => 'block',
 		'button_label' => 'Add Description Tab'
 	]],
@@ -73,12 +73,13 @@ $fields = [
 	['text', 'Base Wallboard Price'],
 	['text', 'Base Drywall Price'],
 	['text', 'Base Modular Price'],
+	['text', 'Price Range'],
 	['repeater', 'Displayed Prices', [
 		'sub_fields' => [
 			['text', 'Price Label'],
 			['text', 'Price'],
 		],
-		'min' => 1,
+		'min' => 0,
 		'max' => 10,
 		'layout' => 'block',
 		'button_label' => 'Add Price'

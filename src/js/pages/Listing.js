@@ -103,9 +103,11 @@ export default class {
 		const priceSelect = document.getElementById( 'priceSelect' );
 		const priceDisplay = document.getElementById( 'priceDisplay' );
 
-		priceSelect.addEventListener( 'change', () => {
-			priceDisplay.textContent = priceSelect.value;
-		});
+		if ( priceSelect ) {
+			priceSelect.addEventListener( 'change', () => {
+				priceDisplay.textContent = priceSelect.value;
+			});
+		}
 	}
 
 	create() {
