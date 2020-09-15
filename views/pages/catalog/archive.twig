@@ -39,6 +39,12 @@
 						<div class="card__wrapper">
 							<img alt="{{ post.title }}" class="card__image" src="{{ post.thumbnail.src }}" data-img/>
 							<h3 data-title>{{ post.title }}</h3>
+							<ul>
+								<li data-sqft>SqFt: {{ post.get_field('sqft') }}</li>
+								<li data-size>Size: {{ post.get_field('size') }}</li>
+								<!-- <li>Beds: {{ post.get_field('beds') }}</li> -->
+								<!-- <li>Bathrooms: {{ post.get_field('bathrooms') }}</li> -->
+							</ul>
 						</div>
 					</a>
 				{% endfor %}

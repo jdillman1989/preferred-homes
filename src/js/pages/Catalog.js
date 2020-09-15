@@ -185,8 +185,12 @@ export default class {
 			const title = template.querySelector( '[data-title]' );
 			const links = template.querySelectorAll( '[data-url]' );
 			const img = template.querySelector( '[data-img]' );
+			const sqft = template.querySelector( '[data-sqft]' );
+			const size = template.querySelector( '[data-size]' );
 
 			title.innerText = post.title;
+			sqft.innerText = 'SqFt: ' + post.sqft;
+			size.innerText = 'Size: ' + post.size;
 
 			links.forEach( link => {
 				link.href = post.url;

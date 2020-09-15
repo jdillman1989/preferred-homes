@@ -122,6 +122,8 @@ function archive_filter_get_data() {
 
 			$this_post['title'] = get_the_title();
 			$this_post['url'] = ( get_field('external_link') ) ? get_field('external_link') : get_permalink();
+			$this_post['sqft'] = get_field('sqft');
+			$this_post['size'] = get_field('size');
 
 			$post_results['data'][] = $this_post;
 		}
