@@ -90,8 +90,8 @@ function archive_filter_get_data() {
 	$data_args = ['post_type' => $_POST['type']];
 	$data_args['paged'] = (isset($_POST['next'])) ? intval($_POST['next']) : 1;
 	$data_args['posts_per_page'] = (isset($_POST['s'])) ? -1 : $_POST['ppp'];
-	$data_args['orderby'] = 'title title';
-    $data_args['order'] = 'DESC';
+	$data_args['orderby'] = 'title date';
+    $data_args['order'] = 'ASC';
 
 	if (isset($_POST['tax'])) {
 		foreach ($_POST['tax'] as $tax => $term) {
@@ -206,7 +206,7 @@ function archive_page_template($context, $type = 'listing', $is_archive = false)
 		'posts_per_page' => $ppp,
 		'paged' => $paged,
 		'orderby' => 'title date',
-		'order' => 'DESC'
+		'order' => 'ASC'
 	];
 	if ($is_archive) {
 		$posts_args['tax_query'] = [

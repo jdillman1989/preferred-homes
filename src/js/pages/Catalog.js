@@ -138,8 +138,7 @@ export default class {
 			if ( ! isAppended ) {
 				postsWrapper.parentNode.replaceChild( dataHTML, postsWrapper );
 			} else {
-				dataHTML.replaceWith( ...dataHTML.childNodes );
-				postsWrapper.appendChild( ...dataHTML.childNodes );
+				postsWrapper.appendChild( dataHTML );
 			}
 
 			postsSection.classList.remove( 'faded' );
@@ -159,7 +158,6 @@ export default class {
 	 */
 	getPostsMarkup( wrapper, postData ) {
 		const getTemplate = wrapper.firstElementChild;
-
 		const html = wrapper.cloneNode();
 
 		if ( ! postData.length ) {
@@ -200,7 +198,6 @@ export default class {
 				img.src = post.image;
 			}
 			img.style.display = 'block';
-
 			template.style.display = 'block';
 
 			html.appendChild( template );
