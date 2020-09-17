@@ -132,6 +132,23 @@
 
 		&__wrapper {
 			margin-bottom: rem-calc(10);
+			position: relative;
+		}
+
+		&__callout {
+			display: block;
+			background: $color-primary;
+			font-weight: 700;
+			font-size: rem-calc(20);
+			color: white;
+			padding: rem-calc(5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			text-align: center;
+			z-index: 1;
 		}
 
 		&__image {

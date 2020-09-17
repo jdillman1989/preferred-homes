@@ -37,6 +37,11 @@
 				{% for post in posts %}
 					<a href="{{ post.link }}" class="card" data-url>
 						<div class="card__wrapper">
+							{% if post.get_field('callout') %}
+								<span class="card__callout" data-callout>{{ post.get_field('callout') }}</span>
+							{% else %}
+								<span class="card__callout" data-callout style="display: none;"></span>
+							{% endif %}
 							<img alt="{{ post.title }}" class="card__image" src="{{ post.thumbnail.src }}" data-img/>
 							<h3 data-title>{{ post.title }}</h3>
 							<ul>

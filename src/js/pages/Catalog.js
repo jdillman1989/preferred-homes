@@ -185,10 +185,16 @@ export default class {
 			const img = template.querySelector( '[data-img]' );
 			const sqft = template.querySelector( '[data-sqft]' );
 			const size = template.querySelector( '[data-size]' );
+			const callout = template.querySelector( '[data-callout]' );
 
 			title.innerText = post.title;
 			sqft.innerText = 'SqFt: ' + post.sqft;
 			size.innerText = 'Size: ' + post.size;
+
+			if ( post.callout.length ) {
+				callout.innerText = post.callout;
+				callout.style.display = 'block';
+			}
 
 			links.forEach( link => {
 				link.href = post.url;

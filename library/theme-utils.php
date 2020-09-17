@@ -124,6 +124,7 @@ function archive_filter_get_data() {
 			$this_post['url'] = ( get_field('external_link') ) ? get_field('external_link') : get_permalink();
 			$this_post['sqft'] = get_field('sqft');
 			$this_post['size'] = get_field('size');
+			$this_post['callout'] = get_field('callout');
 
 			$post_results['data'][] = $this_post;
 		}
@@ -199,7 +200,7 @@ function archive_page_template($context, $type = 'listing', $is_archive = false)
 	}
 
 	// Post List
-	$ppp = 8;
+	$ppp = 20;
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 	$posts_args = [
 		'post_type' => $type,
