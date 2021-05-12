@@ -73,7 +73,7 @@
     "lazysizes": "^5.2.0",
     "lodash": "^4.17.15",
     "nodelist-foreach-polyfill": "^1.2.0",
-    "swiper": "^5.4.3",
+    "swiper": "^6.5.1",
     "url-search-params-polyfill": "^8.0.0",
     "whatwg-fetch": "^3.0.0"
   }
